@@ -5,7 +5,7 @@
 ### 1. Clone the repo
 
 ```bash
-git clone
+git clone https://github.com/shhdharmen/ngm-dev-blocks-demo-app
 cd ngm-dev-blocks-demo-app
 ```
 
