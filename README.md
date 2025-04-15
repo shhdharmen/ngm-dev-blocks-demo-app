@@ -1,59 +1,43 @@
-# MyApp
+# Sample Angular Workspace Configured for "Angular Material Blocks"
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 19.2.7.
+## Getting started
 
-## Development server
-
-To start a local development server, run:
+### 1. Clone the repo
 
 ```bash
-ng serve
+git clone
+cd ngm-dev-blocks-demo-app
 ```
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
-
-## Code scaffolding
-
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+### 2. Install dependencies
 
 ```bash
-ng generate component component-name
+npm i
 ```
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+### 3. Start dev server
 
 ```bash
-ng generate --help
+npm start
 ```
 
-## Building
+## What's included?
 
-To build the project run:
+- Initial setup done using `npx @ngm-dev/cli init`.
+  - `@angular/material` with custom theme
+  - `tailwindcss` with all the needed configuration
+  - [Material symbols](https://fonts.google.com/icons) configured ready to use with `mat-icon` component
+- Added below blocks to try out, present at [📁 ngm-dev-blocks](./src/app/ngm-dev-blocks/) folder
+  - [Login with email & password](https://ui.angular-material.dev/blocks/application/forms/authentication#login-email-password)
+  - [Badge 1](https://ui.angular-material.dev/blocks/application/elements/badges#badge-1)
+  - [Dialog 1](https://ui.angular-material.dev/blocks/application/overlays/dialogs#dialog-1)
+  - [Onboarding feed 1](https://ui.angular-material.dev/blocks/application/lists/onboarding#onboarding-feed-1)
+  - [Simple with icons list](https://ui.angular-material.dev/blocks/application/lists/feeds#simple-with-icons)
 
-```bash
-ng build
-```
+## What's next?
 
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
+You can explore blocks from <https://ui.angular-material.dev/> and start adding them using `npx @ngm-dev/cli add` command.
 
-## Running unit tests
+## Ready for more?
 
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
-
-```bash
-ng test
-```
-
-## Running end-to-end tests
-
-For end-to-end (e2e) testing, run:
-
-```bash
-ng e2e
-```
-
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+[![](./cover.png)](https://ui.angular-material.dev/)

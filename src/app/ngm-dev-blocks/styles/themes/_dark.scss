@@ -1,0 +1,15 @@
+/*
+	Installed from https://ui.angular-material.dev/api/registry/
+	Update this file using `@ngm-dev/cli update styles/themes`
+*/
+
+/*
+  To make `color-scheme: dark;` work make sure to have
+  `color-scheme: light;` just before `@include mat.theme`
+  and not `theme-type` in `color` property of `mat.theme` mixin
+  in your @angular/material theme file
+*/
+
+.dark-theme {
+  color-scheme: dark;
+}

@@ -1,0 +1,21 @@
+/*
+	Installed from https://ui.angular-material.dev/api/registry/
+	Update this file using `@ngm-dev/cli update styles/_tabs`
+*/
+
+@use '@angular/material' as mat;
+
+// As per [Material Design guidelines](https://m3.material.io/components/tabs/specs),
+// primary tabs should have a 3px height and a 3px 3px 0 0 shape.
+
+[fitInkBarToContent],
+[ng-reflect-fit-ink-bar-to-content='true'] {
+  > .mat-mdc-tab-header {
+    @include mat.tabs-overrides(
+      (
+        active-indicator-shape: 3px 3px 0 0,
+        active-indicator-height: 3px,
+      )
+    );
+  }
+}

@@ -1,0 +1,29 @@
+/*
+	Installed from https://ui.angular-material.dev/api/registry/
+	Update this file using `@ngm-dev/cli update styles/_sizes`
+*/
+
+@use '@angular/material' as mat;
+
+$densities: 1, 2, 3, 4, 5;
+
+// Density is a utility that is used to set the density of the components.
+@mixin sizes() {
+  @each $density in $densities {
+    .density-#{$density} {
+      @include mat.theme(
+        (
+          density: -$density,
+        )
+      );
+
+      mat-slide-toggle button {
+        transform: scale(1 - calc($density / 10));
+      }
+    }
+  }
+}
+
+html {
+  @include sizes();
+}

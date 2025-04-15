@@ -1,0 +1,53 @@
+<!--
+	Installed from https://ui.angular-material.dev/api/registry/
+	Update this file using `@ngm-dev/cli update free-lists/simple-with-icons`
+-->
+
+<div class="max-w-md mx-auto p-6">
+  <div class="relative">
+    <!-- Vertical Line -->
+    <div
+      class="absolute left-5 top-8 bottom-0 w-[2px] bg-outline-variant"
+      aria-hidden="true"></div>
+
+    <!-- Timeline Items -->
+    <div class="space-y-8">
+      @for (item of items; track item.id) {
+      <div class="flex gap-4">
+        <!-- Icon -->
+        <div
+          class="relative z-10 w-10 h-10 rounded-full flex items-center justify-center ring-4 ring-surface"
+          [ngClass]="{
+            'bg-gray-300 dark:bg-gray-700': item.type === 'applied',
+            'bg-blue-300 dark:bg-blue-700': item.type === 'advanced',
+            'bg-green-300 dark:bg-green-700': item.type === 'completed'
+          }">
+          <mat-icon class="icon-filled">{{ item.icon }}</mat-icon>
+        </div>
+
+        <!-- Content -->
+        <div class="flex-1">
+          <div class="flex items-start justify-between gap-4">
+            <div>
+              <div class="flex items-center gap-1">
+                <span>{{ item.title }}</span>
+                @if (item.subtitle) {
+                <span class="font-semibold">{{ item.subtitle }}</span>
+                }
+              </div>
+              @if (item.person) {
+              <div class="text-sm text-on-surface-variant">
+                by {{ item.person }}
+              </div>
+              }
+            </div>
+            <div class="text-sm text-on-surface-variant whitespace-nowrap">
+              {{ item.date }}
+            </div>
+          </div>
+        </div>
+      </div>
+      }
+    </div>
+  </div>
+</div>

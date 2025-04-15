@@ -1,0 +1,15 @@
+<!--
+	Installed from https://ui.angular-material.dev/api/registry/
+	Update this file using `@ngm-dev/cli update free-badges/badge-1`
+-->
+
+<div class="flex justify-center py-4">
+  <mat-chip-set>
+    @for (badge of badges; track badge.value) {
+    <mat-chip [ngClass]="badge.classes">
+      <mat-icon matChipAvatar>{{ getTrendIcon(badge.trend) }}</mat-icon>
+      {{ badge.value }}
+    </mat-chip>
+    }
+  </mat-chip-set>
+</div>

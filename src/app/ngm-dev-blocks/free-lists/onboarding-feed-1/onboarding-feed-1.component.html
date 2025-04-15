@@ -1,0 +1,74 @@
+<!--
+	Installed from https://ui.angular-material.dev/api/registry/
+	Update this file using `@ngm-dev/cli update free-lists/onboarding-feed-1`
+-->
+
+<div class="sm:mx-auto sm:max-w-lg p-4">
+  <h3 class="text-xl font-semibold text-on-surface mb-1">
+    Hello, {{ userName }}
+  </h3>
+  <p class="text-base text-on-surface-variant mt-0">
+    Let's set up your first data workspace
+  </p>
+  <ul role="list" class="mt-8 space-y-3 list-none p-0">
+    @for (step of steps; track step.id) { @if (step.type === 'done') {
+    <li class="relative p-4">
+      <div class="flex items-start">
+        <mat-icon class="text-primary! icon-filled">check_circle</mat-icon>
+        <div class="ml-3 w-0 flex-1 pt-0.5">
+          <p class="font-medium leading-none text-on-surface">
+            <a
+              [href]="step.href"
+              class="focus:outline-hidden no-underline text-inherit">
+              <!-- extend link to entire list card -->
+              <span class="absolute inset-0" aria-hidden="true"></span>
+              {{ step.title }}
+            </a>
+          </p>
+          <p class="mt-2 text-base leading-6 text-on-surface-variant">
+            {{ step.description }}
+          </p>
+        </div>
+      </div>
+    </li>
+    } @else if (step.type === 'in progress') {
+    <li class="rounded-lg bg-surface-container p-4">
+      <div class="flex items-start">
+        <mat-icon class="text-primary!">radio_button_unchecked</mat-icon>
+        <div class="ml-3 w-0 flex-1 pt-0.5">
+          <p class="font-medium leading-none text-on-surface">
+            {{ step.title }}
+          </p>
+          <p class="mt-2 text-base leading-6 text-on-surface-variant">
+            {{ step.description }}
+          </p>
+          <button mat-flat-button class="mt-2">
+            <mat-icon class="-ml-0.5">database</mat-icon>
+            Connect database
+          </button>
+        </div>
+      </div>
+    </li>
+    } @else {
+    <li class="relative p-4">
+      <div class="flex items-start">
+        <mat-icon class="text-outline">radio_button_unchecked</mat-icon>
+        <div class="ml-3 w-0 flex-1 pt-0.5">
+          <p class="font-medium leading-none text-outline">
+            <a
+              [href]="step.href"
+              class="focus:outline-hidden no-underline text-inherit">
+              <!-- extend link to entire list card -->
+              <span class="absolute inset-0" aria-hidden="true"></span>
+              {{ step.title }}
+            </a>
+          </p>
+          <p class="mt-2 text-base leading-6 text-outline">
+            {{ step.description }}
+          </p>
+        </div>
+      </div>
+    </li>
+    } }
+  </ul>
+</div>

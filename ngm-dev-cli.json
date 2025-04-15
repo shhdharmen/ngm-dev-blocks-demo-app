@@ -1,0 +1,14 @@
+{
+	"$schema": "https://cdn.jsdelivr.net/npm/@ngm-dev/cli/schemas/project-config.json",
+	"repos": [
+		"https://ui.angular-material.dev/api/registry"
+	],
+	"includeTests": false,
+	"watermark": true,
+	"configFiles": {
+		"Tailwind postcss config": "./.postcssrc.json"
+	},
+	"paths": {
+		"*": "./src/app/ngm-dev-blocks"
+	}
+}

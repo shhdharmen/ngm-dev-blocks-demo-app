@@ -1,0 +1,230 @@
+/*
+	Installed from https://ui.angular-material.dev/api/registry/
+	Update this file using `@ngm-dev/cli update styles/vendors`
+*/
+
+@use 'tailwindcss';
+
+// base for setting the font-families
+@layer base {
+  body {
+    // same as `plain-family` in angular material
+    font-family: var(--mat-sys-body-large-font), sans-serif;
+
+    // apply @angular/material's background and foreground colors
+    background-color: var(--mat-sys-surface);
+    color: var(--mat-sys-on-surface);
+  }
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    // same as `brand-family` in angular material
+    font-family: var(--mat-sys-display-large-font), sans-serif;
+  }
+}
+
+@utility form-field-error-icon {
+  vertical-align: bottom;
+  font-variation-settings: 'FILL' 1;
+  height: 16px !important;
+  width: 16px !important;
+  font-size: 16px !important;
+}
+
+@utility icon-filled {
+  font-variation-settings: 'FILL' 1;
+}
+
+// `.dark-theme` is the class name to enable dark mode in our application
+@custom-variant dark (&:where(.dark-theme, .dark-theme *));
+
+// `inline` is needed to use the CSS variables in tailwind's @theme
+@theme inline {
+  --color-primary: var(--mat-sys-primary);
+  --color-on-primary: var(--mat-sys-on-primary);
+  --color-primary-container: var(--mat-sys-primary-container);
+  --color-on-primary-container: var(--mat-sys-on-primary-container);
+  --color-secondary: var(--mat-sys-secondary);
+  --color-on-secondary: var(--mat-sys-on-secondary);
+  --color-secondary-container: var(--mat-sys-secondary-container);
+  --color-on-secondary-container: var(--mat-sys-on-secondary-container);
+  --color-tertiary: var(--mat-sys-tertiary);
+  --color-on-tertiary: var(--mat-sys-on-tertiary);
+  --color-tertiary-container: var(--mat-sys-tertiary-container);
+  --color-on-tertiary-container: var(--mat-sys-on-tertiary-container);
+  --color-error: var(--mat-sys-error);
+  --color-on-error: var(--mat-sys-on-error);
+  --color-error-container: var(--mat-sys-error-container);
+  --color-on-error-container: var(--mat-sys-on-error-container);
+  --color-outline: var(--mat-sys-outline);
+  --color-outline-variant: var(--mat-sys-outline-variant);
+  --color-surface: var(--mat-sys-surface);
+  --color-surface-container-highest: var(--mat-sys-surface-container-highest);
+  --color-surface-container-high: var(--mat-sys-surface-container-high);
+  --color-surface-container-medium: var(--mat-sys-surface-container-medium);
+  --color-surface-container-low: var(--mat-sys-surface-container-low);
+  --color-surface-container-lowest: var(--mat-sys-surface-container-lowest);
+  --color-surface-container: var(--mat-sys-surface-container);
+  --color-surface-variant: var(--mat-sys-surface-variant);
+  --color-on-surface-variant: var(--mat-sys-on-surface-variant);
+  --color-on-surface: var(--mat-sys-on-surface);
+
+  // same as `plain-family` in angular material
+  --font-sans: var(--mat-sys-body-large-font), sans-serif;
+  --font-mono: 'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, Monaco,
+    Consolas, Liberation Mono, Courier New, monospace;
+  --font-display: var(--mat-sys-display-large-font), sans-serif;
+
+  // angular material radiuses
+  --radius-corner-extra-large: var(--mat-sys-corner-extra-large);
+  --radius-corner-extra-small: var(--mat-sys-corner-extra-small);
+  --radius-corner-full: var(--mat-sys-corner-full);
+  --radius-corner-large: var(--mat-sys-corner-large);
+  --radius-corner-medium: var(--mat-sys-corner-medium);
+  --radius-corner-small: var(--mat-sys-corner-small);
+  --radius-mat-card: var(
+    --mdc-outlined-card-container-shape,
+    var(--mat-sys-corner-medium)
+  );
+
+  // angular material font sizes
+  // body
+  --text-body-small: var(--mat-sys-body-small-size);
+  --text-body-small--line-height: var(--mat-sys-body-small-line-height);
+  --text-body-small--letter-spacing: var(--mat-sys-body-small-tracking);
+  --text-body-small--font-weight: var(--mat-sys-body-small-weight);
+  --text-body-small--font-family: var(--mat-sys-body-small-font);
+  --text-body-medium: var(--mat-sys-body-medium-size);
+  --text-body-medium--line-height: var(--mat-sys-body-medium-line-height);
+  --text-body-medium--letter-spacing: var(--mat-sys-body-medium-tracking);
+  --text-body-medium--font-weight: var(--mat-sys-body-medium-weight);
+  --text-body-medium--font-family: var(--mat-sys-body-medium-font);
+  --text-body-large: var(--mat-sys-body-large-size);
+  --text-body-large--line-height: var(--mat-sys-body-large-line-height);
+  --text-body-large--letter-spacing: var(--mat-sys-body-large-tracking);
+  --text-body-large--font-weight: var(--mat-sys-body-large-weight);
+  --text-body-large--font-family: var(--mat-sys-body-large-font);
+
+  // display
+  --text-display-small: var(--mat-sys-display-small-size);
+  --text-display-small--line-height: var(--mat-sys-display-small-line-height);
+  --text-display-small--letter-spacing: var(--mat-sys-display-small-tracking);
+  --text-display-small--font-weight: var(--mat-sys-display-small-weight);
+  --text-display-small--font-family: var(--mat-sys-display-small-font);
+  --text-display-medium: var(--mat-sys-display-medium-size);
+  --text-display-medium--line-height: var(--mat-sys-display-medium-line-height);
+  --text-display-medium--letter-spacing: var(--mat-sys-display-medium-tracking);
+  --text-display-medium--font-weight: var(--mat-sys-display-medium-weight);
+  --text-display-medium--font-family: var(--mat-sys-display-medium-font);
+  --text-display-large: var(--mat-sys-display-large-size);
+  --text-display-large--line-height: var(--mat-sys-display-large-line-height);
+  --text-display-large--letter-spacing: var(--mat-sys-display-large-tracking);
+  --text-display-large--font-weight: var(--mat-sys-display-large-weight);
+  --text-display-large--font-family: var(--mat-sys-display-large-font);
+
+  // headline
+  --text-headline-small: var(--mat-sys-headline-small-size);
+  --text-headline-small--line-height: var(--mat-sys-headline-small-line-height);
+  --text-headline-small--letter-spacing: var(--mat-sys-headline-small-tracking);
+  --text-headline-small--font-weight: var(--mat-sys-headline-small-weight);
+  --text-headline-small--font-family: var(--mat-sys-headline-small-font);
+  --text-headline-medium: var(--mat-sys-headline-medium-size);
+  --text-headline-medium--line-height: var(
+    --mat-sys-headline-medium-line-height
+  );
+  --text-headline-medium--letter-spacing: var(
+    --mat-sys-headline-medium-tracking
+  );
+  --text-headline-medium--font-weight: var(--mat-sys-headline-medium-weight);
+  --text-headline-medium--font-family: var(--mat-sys-headline-medium-font);
+  --text-headline-large: var(--mat-sys-headline-large-size);
+  --text-headline-large--line-height: var(--mat-sys-headline-large-line-height);
+  --text-headline-large--letter-spacing: var(--mat-sys-headline-large-tracking);
+  --text-headline-large--font-weight: var(--mat-sys-headline-large-weight);
+  --text-headline-large--font-family: var(--mat-sys-headline-large-font);
+
+  // title
+  --text-title-small: var(--mat-sys-title-small-size);
+  --text-title-small--line-height: var(--mat-sys-title-small-line-height);
+  --text-title-small--letter-spacing: var(--mat-sys-title-small-tracking);
+  --text-title-small--font-weight: var(--mat-sys-title-small-weight);
+  --text-title-small--font-family: var(--mat-sys-title-small-font);
+  --text-title-medium: var(--mat-sys-title-medium-size);
+  --text-title-medium--line-height: var(--mat-sys-title-medium-line-height);
+  --text-title-medium--letter-spacing: var(--mat-sys-title-medium-tracking);
+  --text-title-medium--font-weight: var(--mat-sys-title-medium-weight);
+  --text-title-medium--font-family: var(--mat-sys-title-medium-font);
+  --text-title-large: var(--mat-sys-title-large-size);
+  --text-title-large--line-height: var(--mat-sys-title-large-line-height);
+  --text-title-large--letter-spacing: var(--mat-sys-title-large-tracking);
+  --text-title-large--font-weight: var(--mat-sys-title-large-weight);
+  --text-title-large--font-family: var(--mat-sys-title-large-font);
+
+  // label
+  --text-label-small: var(--mat-sys-label-small-size);
+  --text-label-small--line-height: var(--mat-sys-label-small-line-height);
+  --text-label-small--letter-spacing: var(--mat-sys-label-small-tracking);
+  --text-label-small--font-weight: var(--mat-sys-label-small-weight);
+  --text-label-small--font-family: var(--mat-sys-label-small-font);
+  --text-label-medium: var(--mat-sys-label-medium-size);
+  --text-label-medium--line-height: var(--mat-sys-label-medium-line-height);
+  --text-label-medium--letter-spacing: var(--mat-sys-label-medium-tracking);
+  --text-label-medium--font-weight: var(--mat-sys-label-medium-weight);
+  --text-label-medium--font-family: var(--mat-sys-label-medium-font);
+  --text-label-large: var(--mat-sys-label-large-size);
+  --text-label-large--line-height: var(--mat-sys-label-large-line-height);
+  --text-label-large--letter-spacing: var(--mat-sys-label-large-tracking);
+  --text-label-large--font-weight: var(--mat-sys-label-large-weight);
+  --text-label-large--font-family: var(--mat-sys-label-large-font);
+
+  // animations
+  // fade-in
+  --animate-fadeIn: fadeIn 300ms ease-in-out forwards
+    var(--animation-delay, 0ms);
+  @keyframes fadeIn {
+    0% {
+      opacity: 0;
+      transform: translateY(-5px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  // marquee
+  --animate-marquee: marquee var(--duration, 40s) linear infinite;
+
+  @keyframes marquee {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(calc(-100% - var(--gap, 1rem)));
+    }
+  }
+
+  --animate-marquee-vertical: marquee-vertical var(--duration, 40s) linear
+    infinite;
+
+  @keyframes marquee-vertical {
+    0% {
+      transform: translateY(0);
+    }
+    100% {
+      transform: translateY(calc(-100% - var(--gap, 1rem)));
+    }
+  }
+}
+
+// #region: Tailwind X Angular Material fix
+.mdc-notched-outline__notch {
+  border-style: none;
+}
+.mat-mdc-icon-button {
+  line-height: 1;
+}
+// #endregion

@@ -1,0 +1,41 @@
+/*
+	Installed from https://ui.angular-material.dev/api/registry/
+	Update this file using `@ngm-dev/cli update styles/_dialogs`
+*/
+
+@use '@angular/material' as mat;
+
+// In responsive mode, the dialog can be full screen.
+// usage example:
+// const options: MatDialogConfig = {
+//   maxWidth: isHandset ? '100dvw' : '1024px',
+//   panelClass: 'full-screen-dialog',
+// };
+// if (isHandset) {
+//   options.minWidth = '100dvw';
+//   options.minHeight = '100dvh';
+// }
+// this.dialog.open(AddApplicationDialogComponent, options);
+.full-screen-dialog {
+  @media (width < 40rem) {
+    @include mat.dialog-overrides(
+      (
+        container-shape: 0,
+      )
+    );
+    .mat-mdc-dialog-content {
+      // device height - header height -actions height
+      max-height: calc(100dvh - 68px);
+    }
+  }
+}
+
+// As per [Material Design guidelines](https://m3.material.io/components/dialogs/specs),
+// dialog container should have a surface-container-high color.
+html {
+  @include mat.dialog-overrides(
+    (
+      container-color: var(--mat-sys-surface-container-high),
+    )
+  );
+}
