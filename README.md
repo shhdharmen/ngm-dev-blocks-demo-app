@@ -27,6 +27,7 @@ npm start
   - `@angular/material` with custom theme
   - `tailwindcss` with all the needed configuration
   - [Material symbols](https://fonts.google.com/icons) configured ready to use with `mat-icon` component
+  - Required [styles](./src/app/ngm-dev-blocks/styles) included for Angular Material Blocks to run properly
 - Added below blocks to try out, present at [📁 ngm-dev-blocks](./src/app/ngm-dev-blocks/) folder
   - [Login with email & password](https://ui.angular-material.dev/blocks/application/forms/authentication#login-email-password)
   - [Badge 1](https://ui.angular-material.dev/blocks/application/elements/badges#badge-1)
