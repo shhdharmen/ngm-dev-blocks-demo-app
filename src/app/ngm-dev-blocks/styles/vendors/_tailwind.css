@@ -3,15 +3,15 @@
 	Update this file using `@ngm-dev/cli update styles/vendors`
 */
 
-@use 'tailwindcss';
+@import 'tailwindcss';
 
-// base for setting the font-families
+/* base for setting the font-families */
 @layer base {
   body {
-    // same as `plain-family` in angular material
+    /* same as `plain-family` in angular material */
     font-family: var(--mat-sys-body-large-font), sans-serif;
 
-    // apply @angular/material's background and foreground colors
+    /* apply @angular/material's background and foreground colors */
     background-color: var(--mat-sys-surface);
     color: var(--mat-sys-on-surface);
   }
@@ -21,7 +21,7 @@
   h4,
   h5,
   h6 {
-    // same as `brand-family` in angular material
+    /* same as `brand-family` in angular material */
     font-family: var(--mat-sys-display-large-font), sans-serif;
   }
 }
@@ -38,10 +38,10 @@
   font-variation-settings: 'FILL' 1;
 }
 
-// `.dark-theme` is the class name to enable dark mode in our application
+/* `.dark-theme` is the class name to enable dark mode in our application */
 @custom-variant dark (&:where(.dark-theme, .dark-theme *));
 
-// `inline` is needed to use the CSS variables in tailwind's @theme
+/* `inline` is needed to use the CSS variables in tailwind's @theme */
 @theme inline {
   --color-primary: var(--mat-sys-primary);
   --color-on-primary: var(--mat-sys-on-primary);
@@ -72,13 +72,13 @@
   --color-on-surface-variant: var(--mat-sys-on-surface-variant);
   --color-on-surface: var(--mat-sys-on-surface);
 
-  // same as `plain-family` in angular material
+  /* same as `plain-family` in angular material */
   --font-sans: var(--mat-sys-body-large-font), sans-serif;
   --font-mono: 'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, Monaco,
     Consolas, Liberation Mono, Courier New, monospace;
   --font-display: var(--mat-sys-display-large-font), sans-serif;
 
-  // angular material radiuses
+  /* angular material radiuses */
   --radius-corner-extra-large: var(--mat-sys-corner-extra-large);
   --radius-corner-extra-small: var(--mat-sys-corner-extra-small);
   --radius-corner-full: var(--mat-sys-corner-full);
@@ -90,8 +90,8 @@
     var(--mat-sys-corner-medium)
   );
 
-  // angular material font sizes
-  // body
+  /* angular material font sizes */
+  /* body */
   --text-body-small: var(--mat-sys-body-small-size);
   --text-body-small--line-height: var(--mat-sys-body-small-line-height);
   --text-body-small--letter-spacing: var(--mat-sys-body-small-tracking);
@@ -108,7 +108,7 @@
   --text-body-large--font-weight: var(--mat-sys-body-large-weight);
   --text-body-large--font-family: var(--mat-sys-body-large-font);
 
-  // display
+  /* display */
   --text-display-small: var(--mat-sys-display-small-size);
   --text-display-small--line-height: var(--mat-sys-display-small-line-height);
   --text-display-small--letter-spacing: var(--mat-sys-display-small-tracking);
@@ -125,7 +125,7 @@
   --text-display-large--font-weight: var(--mat-sys-display-large-weight);
   --text-display-large--font-family: var(--mat-sys-display-large-font);
 
-  // headline
+  /* headline */
   --text-headline-small: var(--mat-sys-headline-small-size);
   --text-headline-small--line-height: var(--mat-sys-headline-small-line-height);
   --text-headline-small--letter-spacing: var(--mat-sys-headline-small-tracking);
@@ -146,7 +146,7 @@
   --text-headline-large--font-weight: var(--mat-sys-headline-large-weight);
   --text-headline-large--font-family: var(--mat-sys-headline-large-font);
 
-  // title
+  /* title */
   --text-title-small: var(--mat-sys-title-small-size);
   --text-title-small--line-height: var(--mat-sys-title-small-line-height);
   --text-title-small--letter-spacing: var(--mat-sys-title-small-tracking);
@@ -163,7 +163,7 @@
   --text-title-large--font-weight: var(--mat-sys-title-large-weight);
   --text-title-large--font-family: var(--mat-sys-title-large-font);
 
-  // label
+  /* label */
   --text-label-small: var(--mat-sys-label-small-size);
   --text-label-small--line-height: var(--mat-sys-label-small-line-height);
   --text-label-small--letter-spacing: var(--mat-sys-label-small-tracking);
@@ -180,8 +180,8 @@
   --text-label-large--font-weight: var(--mat-sys-label-large-weight);
   --text-label-large--font-family: var(--mat-sys-label-large-font);
 
-  // animations
-  // fade-in
+  /* animations */
+  /* fade-in */
   --animate-fadeIn: fadeIn 300ms ease-in-out forwards
     var(--animation-delay, 0ms);
   @keyframes fadeIn {
@@ -195,7 +195,7 @@
     }
   }
 
-  // marquee
+  /* marquee */
   --animate-marquee: marquee var(--duration, 40s) linear infinite;
 
   @keyframes marquee {
@@ -220,11 +220,11 @@
   }
 }
 
-// #region: Tailwind X Angular Material fix
+/* #region: Tailwind X Angular Material fix */
 .mdc-notched-outline__notch {
   border-style: none;
 }
 .mat-mdc-icon-button {
   line-height: 1;
 }
-// #endregion
+/* #endregion */

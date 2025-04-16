@@ -11,4 +11,4 @@
 @forward './dialogs'; // get it using `@ngm-dev/cli add styles/_dialogs`
 @forward './sizes'; // get it using `@ngm-dev/cli add styles/_sizes`
 @forward './tabs'; // get it using `@ngm-dev/cli add styles/_tabs`
-@forward './vendors/tailwind'; // get it using `@ngm-dev/cli add styles/vendors`
+@forward './vendors/_tailwind.css'; // get it using `@ngm-dev/cli add styles/vendors`
