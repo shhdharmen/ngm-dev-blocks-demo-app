@@ -1,0 +1,13 @@
+{
+	"mcpServers": {
+		"ngm-dev-mcp": {
+			"command": "npx",
+			"args": [
+				"-y",
+				"@ngm-dev/cli",
+				"mcp",
+				"full/path/to/ngm-dev-blocks-demo-app"
+			]
+		}
+	}
+}
