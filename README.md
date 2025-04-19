@@ -44,6 +44,7 @@ To change font-families, take a look at [_variables.scss](./src/_variables.scss)
   - [Onboarding feed 1](https://ui.angular-material.dev/blocks/application/lists/onboarding#onboarding-feed-1)
   - [Simple with icons list](https://ui.angular-material.dev/blocks/application/lists/feeds#simple-with-icons)
   - [Grid List 1](https://ui.angular-material.dev/blocks/application/lists/grid-lists#grid-list-1)
+  - [Page Shell 1](https://ui.angular-material.dev/blocks/application/application-shells/page-shells#page-shell-1)
 
 ## What's next?
 

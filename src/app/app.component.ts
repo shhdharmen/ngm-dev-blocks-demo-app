@@ -5,10 +5,19 @@ import { OnboardingFeed1Component } from "./ngm-dev-blocks/free-lists/onboarding
 import { SimpleWithIconsComponent } from "./ngm-dev-blocks/free-lists/simple-with-icons/simple-with-icons.component";
 import { Badge1Component } from "./ngm-dev-blocks/free-badges/badge-1/badge-1.component";
 import { GridList1Component } from './ngm-dev-blocks/free-grid-lists/grid-list-1/grid-list-1.component';
+import { PageShell1Component } from './ngm-dev-blocks/free-page-shells/page-shell-1/page-shell-1.component';
 
 @Component({
   selector: 'app-root',
-  imports: [Dialog1Component, LoginEmailPasswordComponent, OnboardingFeed1Component, SimpleWithIconsComponent, Badge1Component, GridList1Component],
+  imports: [
+    Dialog1Component,
+    LoginEmailPasswordComponent,
+    OnboardingFeed1Component,
+    SimpleWithIconsComponent,
+    Badge1Component,
+    GridList1Component,
+    PageShell1Component,
+  ],
   templateUrl: './app.component.html',
 })
 export class AppComponent {

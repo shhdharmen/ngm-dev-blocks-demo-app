@@ -1,0 +1,75 @@
+<!--
+	Installed from https://ui.angular-material.dev/api/registry/
+	Update this file using `@ngm-dev/cli update free-page-shells/page-shell-1`
+-->
+
+<div class="p-4 sm:p-6 lg:p-8">
+  <header>
+    <div class="sm:flex sm:items-center sm:justify-between">
+      <h3 class="text-3xl font-semibold">Report</h3>
+      <div class="mt-4 sm:mt-0 sm:flex sm:items-center sm:gap-2">
+        <mat-form-field class="w-full sm:w-fit">
+          <mat-select
+            [value]="selectedTimeRange()"
+            (valueChange)="selectedTimeRange.set($event)"
+            disableRipple>
+            @for (timeRange of timeRanges; track timeRange.value) {
+            <mat-option [value]="timeRange.value">{{
+              timeRange.viewValue
+            }}</mat-option>
+            }
+          </mat-select>
+        </mat-form-field>
+        <mat-form-field class="mt-2 sm:mt-0 w-full sm:w-fit">
+          <mat-select
+            [value]="selectedLocation()"
+            (valueChange)="selectedLocation.set($event)"
+            disableRipple>
+            @for (location of locations; track location.value) {
+            <mat-option [value]="location.value">{{
+              location.viewValue
+            }}</mat-option>
+            }
+          </mat-select>
+        </mat-form-field>
+      </div>
+    </div>
+  </header>
+  <main>
+    <mat-tab-group class="mt-6" fitInkBarToContent mat-stretch-tabs="false">
+      <mat-tab label="Overview">
+        <div class="mt-4 grid grid-cols-1 gap-4 sm:grid-cols-2">
+          <mat-card appearance="outlined" class="h-36 p-2">
+            <ngm-dev-block-content-placeholder
+              patternId="pattern-1"
+              matCardImage></ngm-dev-block-content-placeholder>
+          </mat-card>
+          <mat-card appearance="outlined" class="h-36 p-2">
+            <ngm-dev-block-content-placeholder
+              patternId="pattern-2"
+              matCardImage></ngm-dev-block-content-placeholder>
+          </mat-card>
+          <mat-card appearance="outlined" class="h-36 p-2">
+            <ngm-dev-block-content-placeholder
+              patternId="pattern-3"
+              matCardImage></ngm-dev-block-content-placeholder>
+          </mat-card>
+          <mat-card appearance="outlined" class="h-36 p-2">
+            <ngm-dev-block-content-placeholder
+              patternId="pattern-4"
+              matCardImage></ngm-dev-block-content-placeholder>
+          </mat-card>
+        </div>
+      </mat-tab>
+      <mat-tab label="Detail">
+        <div class="mt-4">
+          <mat-card appearance="outlined" class="h-72 p-2">
+            <ngm-dev-block-content-placeholder
+              patternId="pattern-5"
+              matCardImage></ngm-dev-block-content-placeholder>
+          </mat-card>
+        </div>
+      </mat-tab>
+    </mat-tab-group>
+  </main>
+</div>
