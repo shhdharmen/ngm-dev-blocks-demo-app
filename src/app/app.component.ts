@@ -6,6 +6,7 @@ import { SimpleWithIconsComponent } from "./ngm-dev-blocks/free-lists/simple-wit
 import { Badge1Component } from "./ngm-dev-blocks/free-badges/badge-1/badge-1.component";
 import { GridList1Component } from './ngm-dev-blocks/free-grid-lists/grid-list-1/grid-list-1.component';
 import { PageShell1Component } from './ngm-dev-blocks/free-page-shells/page-shell-1/page-shell-1.component';
+import { NavWithPageHeaderComponent } from './ngm-dev-blocks/free-stacked-layouts/nav-with-page-header/nav-with-page-header.component';
 
 @Component({
   selector: 'app-root',
@@ -17,6 +18,7 @@ import { PageShell1Component } from './ngm-dev-blocks/free-page-shells/page-shel
     Badge1Component,
     GridList1Component,
     PageShell1Component,
+    NavWithPageHeaderComponent
   ],
   templateUrl: './app.component.html',
 })
