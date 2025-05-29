@@ -1,0 +1,119 @@
+<!--
+	Installed from https://ui.angular-material.dev/api/registry/
+	Update this file using `@ngm-dev/cli update free-multi-column/full-width-three-column`
+-->
+
+<!-- Ideally, you would use h-[100dvh] with body, and then use h-full with the sidenav-container. -->
+<mat-sidenav-container class="h-[100dvh]">
+  <!-- You can apply fixedInViewport to the mat-sidenav to keep it fixed when scrolling. -->
+  <mat-sidenav
+    #drawer
+    class="w-[288px]! border-r border-outline-variant!"
+    [attr.role]="(isLessThanMD$ | async) ? 'dialog' : 'navigation'"
+    [mode]="(isLessThanMD$ | async) ? 'over' : 'side'"
+    [opened]="(isLessThanMD$ | async) === false">
+    <div class="flex flex-col h-full">
+      <mat-toolbar class="bg-inherit">
+        <img
+          class="size-8"
+          src="https://ui.angular-material.dev/app-ui/logo.svg"
+          alt="Your Company" />
+        @if (isLessThanMD$ | async) {
+          <span class="flex-1"></span>
+          <button
+            mat-icon-button
+            aria-label="Toggle sidenav"
+            (click)="drawer.toggle()">
+            <mat-icon>menu_opened</mat-icon>
+          </button>
+        }
+      </mat-toolbar>
+      <mat-nav-list>
+        @for (menuItem of mainMenu; track menuItem.id) {
+          <a mat-list-item [activated]="menuItem.isActive ?? false">
+            <mat-icon
+              matListItemIcon
+              [class]="
+                classNames(
+                  menuItem.isActive
+                    ? 'icon-filled text-primary!'
+                    : 'text-gray-400! dark:text-gray-500!'
+                )
+              "
+              >{{ menuItem.icon }}</mat-icon
+            >
+            {{ menuItem.label }}
+          </a>
+        }
+
+        <h3
+          matSubheader
+          class="text-sm font-medium text-gray-400! dark:text-gray-500!">
+          Your Teams
+        </h3>
+        @for (menuItem of teamMenu; track menuItem.id) {
+          <a mat-list-item routerLink="." fragment="#">
+            <span
+              matListItemIcon
+              class="text-xs! text-gray-400! dark:text-gray-500! font-medium! rounded-lg w-6 h-6 flex items-center justify-center border border-outline-variant!"
+              >{{ menuItem.label.slice(0, 1) }}</span
+            >
+            {{ menuItem.label }}
+          </a>
+        }
+      </mat-nav-list>
+      @if ((isLessThanMD$ | async) === false) {
+        <mat-action-list class="mt-auto!">
+          <button mat-list-item>
+            <img
+              [src]="user.imageUrl"
+              alt="User"
+              matListItemAvatar
+              class="object-cover" />
+            <span matListItemTitle>{{ user.name }}</span>
+            <span matListItemLine>{{ user.email }}</span>
+          </button>
+        </mat-action-list>
+      }
+    </div>
+  </mat-sidenav>
+  <mat-sidenav-content>
+    @if (isLessThanMD$ | async) {
+      <mat-toolbar class="top-0 sticky z-1 space-x-2 shadow-sm">
+        <button
+          type="button"
+          aria-label="Toggle sidenav"
+          matIconButton
+          (click)="drawer.toggle()">
+          <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
+        </button>
+        <img
+          class="size-8"
+          src="https://ui.angular-material.dev/app-ui/logo.svg"
+          alt="Your Company" />
+        <span class="flex-1"></span>
+        <button mat-icon-button class="custom-avatar-button">
+          <img
+            [src]="user.imageUrl"
+            alt="User"
+            class="object-cover rounded-full" />
+        </button>
+      </mat-toolbar>
+    }
+
+    <!-- Add Content Here -->
+    <aside
+      class="w-96 hidden lg:block absolute top-0 left-0 h-full border-r border-outline-variant">
+      <div class="p-4 md:p-6 h-full">
+        <ngm-dev-block-content-placeholder-full-width-three-column></ngm-dev-block-content-placeholder-full-width-three-column>
+      </div>
+    </aside>
+    <main class="lg:pl-96 h-[calc(100dvh-64px)] md:h-full relative">
+      <div class="absolute top-0 left-0 right-0 lg:left-96 lg:right-0 h-full">
+        <div class="p-4 md:p-6 h-full">
+          <ngm-dev-block-content-placeholder-full-width-three-column></ngm-dev-block-content-placeholder-full-width-three-column>
+        </div>
+      </div>
+    </main>
+  </mat-sidenav-content>
+</mat-sidenav-container>

@@ -7,6 +7,8 @@ import { Badge1Component } from "./ngm-dev-blocks/free-badges/badge-1/badge-1.co
 import { GridList1Component } from './ngm-dev-blocks/free-grid-lists/grid-list-1/grid-list-1.component';
 import { PageShell1Component } from './ngm-dev-blocks/free-page-shells/page-shell-1/page-shell-1.component';
 import { NavWithPageHeaderComponent } from './ngm-dev-blocks/free-stacked-layouts/nav-with-page-header/nav-with-page-header.component';
+import { PageHeading1Component } from "./ngm-dev-blocks/free-page-headings/page-heading-1/page-heading-1.component";
+import { FullWidthThreeColumnComponent } from "./ngm-dev-blocks/free-multi-column/full-width-three-column/full-width-three-column.component";
 
 @Component({
   selector: 'app-root',
@@ -18,8 +20,10 @@ import { NavWithPageHeaderComponent } from './ngm-dev-blocks/free-stacked-layout
     Badge1Component,
     GridList1Component,
     PageShell1Component,
-    NavWithPageHeaderComponent
-  ],
+    NavWithPageHeaderComponent,
+    PageHeading1Component,
+    FullWidthThreeColumnComponent
+],
   templateUrl: './app.component.html',
 })
 export class AppComponent {

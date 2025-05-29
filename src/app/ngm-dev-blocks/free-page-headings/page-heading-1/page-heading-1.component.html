@@ -1,0 +1,73 @@
+<!--
+	Installed from https://ui.angular-material.dev/api/registry/
+	Update this file using `@ngm-dev/cli update free-page-headings/page-heading-1`
+-->
+
+<!-- min-h-[200px] given for demo only -->
+<div class="p-6 min-h-[200px]">
+  <div class="lg:flex lg:items-center lg:justify-between">
+    <!-- Title and Meta Section -->
+    <div class="min-w-0 flex-1">
+      <h2
+        class="text-2xl/7 font-bold text-on-surface sm:truncate sm:text-3xl sm:tracking-tight">
+        {{ jobTitle }}
+      </h2>
+      <div
+        class="mt-1 flex flex-col sm:mt-0 sm:flex-row sm:flex-wrap sm:space-x-6">
+        @for (item of metaItems; track item.text) {
+          <div class="mt-2 flex items-center text-sm text-on-surface-variant">
+            <mat-icon class="mr-1.5 size-5 shrink-0 text-outline">{{
+              item.icon
+            }}</mat-icon>
+            {{ item.text }}
+          </div>
+        }
+      </div>
+    </div>
+
+    <!-- Actions Section -->
+    <div class="mt-5 flex lg:mt-0 lg:ml-4 space-x-3">
+      <!-- Desktop Actions -->
+      @if ((isHandset$ | async) === false) {
+        @for (button of actionButtons; track button.label) {
+          @if (button.variant === 'outlined') {
+            <button type="button" mat-stroked-button (click)="button.action()">
+              <mat-icon>{{ button.icon }}</mat-icon>
+              {{ button.label }}
+            </button>
+          } @else {
+            <button type="button" mat-flat-button (click)="button.action()">
+              <mat-icon>{{ button.icon }}</mat-icon>
+              {{ button.label }}
+            </button>
+          }
+        }
+      } @else {
+        <!-- Mobile: Show only Publish button + Dropdown -->
+        <button type="button" mat-flat-button (click)="onPublish()">
+          <mat-icon>check</mat-icon>
+          Publish
+        </button>
+
+        <!-- Mobile Dropdown Menu -->
+        <button
+          type="button"
+          mat-stroked-button
+          [matMenuTriggerFor]="mobileMenu">
+          More
+          <mat-icon>expand_more</mat-icon>
+        </button>
+        <mat-menu #mobileMenu="matMenu">
+          <button mat-menu-item (click)="onMenuAction('edit')">
+            <mat-icon>edit</mat-icon>
+            Edit
+          </button>
+          <button mat-menu-item (click)="onMenuAction('view')">
+            <mat-icon>visibility</mat-icon>
+            View
+          </button>
+        </mat-menu>
+      }
+    </div>
+  </div>
+</div>

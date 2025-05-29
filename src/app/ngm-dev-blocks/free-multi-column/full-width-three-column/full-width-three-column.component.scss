@@ -1,0 +1,14 @@
+/*
+	Installed from https://ui.angular-material.dev/api/registry/
+	Update this file using `@ngm-dev/cli update free-multi-column/full-width-three-column`
+*/
+
+@use '@angular/material' as mat;
+
+.custom-avatar-button {
+  @include mat.icon-button-overrides(
+    (
+      icon-size: 36px,
+    )
+  );
+}

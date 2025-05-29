@@ -9,18 +9,22 @@ import { Observable, map } from 'rxjs';
 
 @Injectable({ providedIn: 'root' })
 export class DeviceService {
-  private breakpointObserver = inject(BreakpointObserver);
+  private readonly breakpointObserver = inject(BreakpointObserver);
 
   isHandset$: Observable<boolean> = this.breakpointObserver
     .observe('(max-width: 640px)')
-    .pipe(map((result) => result.matches));
+    .pipe(map(result => result.matches));
 
   isTablet$: Observable<boolean> = this.breakpointObserver
     .observe('(max-width: 960px)')
-    .pipe(map((result) => result.matches));
+    .pipe(map(result => result.matches));
+
+  isLessThanMD$: Observable<boolean> = this.breakpointObserver
+    .observe('(max-width: 768px)')
+    .pipe(map(result => result.matches));
 
   canViewToc$ = this.breakpointObserver.observe('(max-width: 960px)').pipe(
-    map((result) => {
+    map(result => {
       return !result.matches;
     })
   );
