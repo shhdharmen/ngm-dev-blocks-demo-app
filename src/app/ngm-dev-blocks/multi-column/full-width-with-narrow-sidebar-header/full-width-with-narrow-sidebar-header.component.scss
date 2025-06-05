@@ -1,0 +1,40 @@
+/*
+	Installed from https://ui.angular-material.dev/api/registry/
+	Update this file using `@ngm-dev/cli update multi-column/full-width-with-narrow-sidebar-header`
+*/
+
+@use '@angular/material' as mat;
+
+.custom-avatar-button {
+  @include mat.icon-button-overrides(
+    (
+      icon-size: 36px,
+    )
+  );
+}
+
+.custom-search-field {
+  width: 100%;
+  background-color: color-mix(
+    in srgb,
+    var(--mat-sys-on-surface-variant) 8%,
+    transparent
+  );
+  border-radius: var(--mat-sys-corner-extra-large);
+  transition-duration: 0.2s;
+  transition-property: background-color, box-shadow;
+  transition-timing-function: linear;
+  @include mat.form-field-overrides(
+    (
+      outlined-outline-width: 0,
+      outlined-focus-outline-width: 0,
+      outlined-container-shape: var(--mat-sys-corner-extra-large),
+    )
+  );
+
+  &:focus-within {
+    background-color: transparent;
+    box-shadow: var(--mat-sys-level1);
+    border: 1px solid light-dark(transparent, var(--mat-sys-outline-variant));
+  }
+}

@@ -1,0 +1,146 @@
+<!--
+	Installed from https://ui.angular-material.dev/api/registry/
+	Update this file using `@ngm-dev/cli update multi-column/full-width-with-narrow-sidebar-header`
+-->
+
+<!-- Ideally, you would use h-[100dvh] with body, and then use h-full with the sidenav-container. -->
+<mat-sidenav-container class="h-[100dvh]">
+  <!-- You can apply fixedInViewport to the mat-sidenav to keep it fixed when scrolling. -->
+  <mat-sidenav
+    #drawer
+    [class]="
+      classNames(
+        (isLessThanMD$ | async) === true
+          ? 'w-[288px]!'
+          : 'w-fit! bg-surface-container! rounded-r-none!'
+      )
+    "
+    [attr.role]="(isLessThanMD$ | async) ? 'dialog' : 'navigation'"
+    [mode]="(isLessThanMD$ | async) ? 'over' : 'side'"
+    [opened]="(isLessThanMD$ | async) === false"
+  >
+    <div class="flex flex-col h-full">
+      @if (isLessThanMD$ | async) {
+      <mat-toolbar class="bg-inherit">
+        <img
+          class="size-8"
+          src="https://ui.angular-material.dev/app-ui/logo.svg"
+          alt="Your Company"
+        />
+        @if (isLessThanMD$ | async) {
+        <span class="flex-1"></span>
+        <button
+          mat-icon-button
+          aria-label="Toggle sidenav"
+          (click)="drawer.toggle()"
+        >
+          <mat-icon>menu_opened</mat-icon>
+        </button>
+        }
+      </mat-toolbar>
+      <mat-nav-list>
+        @for (menuItem of mainMenu; track menuItem.id) {
+        <a mat-list-item [activated]="menuItem.isActive ?? false">
+          <mat-icon
+            matListItemIcon
+            [class]="
+                  classNames(
+                    menuItem.isActive
+                      ? 'icon-filled text-primary!'
+                      : 'text-gray-400! dark:text-gray-500!'
+                  )
+                "
+            >{{ menuItem.icon }}</mat-icon
+          >
+          {{ menuItem.label }}
+        </a>
+        }
+      </mat-nav-list>
+      } @else {
+      <ngm-dev-block-paid-application-multi-column-full-width-with-narrow-sidebar-header-navigation-rail
+        [menuItems]="
+            mainMenu
+          "
+      ></ngm-dev-block-paid-application-multi-column-full-width-with-narrow-sidebar-header-navigation-rail>
+      }
+    </div>
+  </mat-sidenav>
+  <mat-sidenav-content>
+    @if (isLessThanMD$ | async) {
+    <mat-toolbar
+      class="top-0 sticky z-1 space-x-2 border-b border-outline-variant"
+    >
+      <button
+        type="button"
+        aria-label="Toggle sidenav"
+        matIconButton
+        (click)="drawer.toggle()"
+      >
+        <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
+      </button>
+      <mat-form-field
+        appearance="outline"
+        subscriptSizing="dynamic"
+        class="custom-search-field density-2"
+      >
+        <mat-icon matPrefix>search</mat-icon>
+        <input matInput />
+      </mat-form-field>
+      <span class="flex-1"></span>
+      <button mat-icon-button>
+        <mat-icon>notifications</mat-icon>
+      </button>
+      <button mat-icon-button class="custom-avatar-button">
+        <img
+          [src]="user.imageUrl"
+          alt="User"
+          class="object-cover rounded-full"
+        />
+      </button>
+    </mat-toolbar>
+    } @else {
+    <mat-toolbar
+      class="top-0 sticky z-1 space-x-2 border-b border-outline-variant"
+    >
+      <mat-form-field
+        appearance="outline"
+        subscriptSizing="dynamic"
+        class="custom-search-field density-2"
+      >
+        <button mat-icon-button matPrefix matTooltip="Search" class="ml-2">
+          <mat-icon>search</mat-icon>
+        </button>
+        <input matInput />
+      </mat-form-field>
+      <span class="flex-1"></span>
+      <button mat-icon-button>
+        <mat-icon>notifications</mat-icon>
+      </button>
+      <button mat-button>
+        <img
+          [src]="user.imageUrl"
+          alt="User"
+          class="object-cover rounded-full size-6 me-1 inline-block"
+        />
+        {{ user.name }}
+      </button>
+    </mat-toolbar>
+    }
+
+    <!-- Add Content Here -->
+    <aside
+      class="w-96 hidden lg:block absolute top-16 left-0 h-[calc(100dvh-64px)] border-r border-outline-variant"
+    >
+      <div class="p-4 md:p-6 h-full">
+        <ngm-dev-block-content-placeholder-full-width-with-narrow-sidebar-header></ngm-dev-block-content-placeholder-full-width-with-narrow-sidebar-header>
+      </div>
+    </aside>
+    <main class="lg:pl-96 h-[calc(100dvh-64px)] relative">
+      <div class="absolute top-0 left-0 right-0 lg:left-96 lg:right-0 h-full">
+        <div class="p-4 md:p-6 h-full">
+          <ngm-dev-block-content-placeholder-full-width-with-narrow-sidebar-header></ngm-dev-block-content-placeholder-full-width-with-narrow-sidebar-header>
+        </div>
+      </div>
+    </main>
+  </mat-sidenav-content>
+</mat-sidenav-container>

@@ -1,6 +1,6 @@
 /*
 	Installed from https://ui.angular-material.dev/api/registry/
-	Update this file using `@ngm-dev/cli update free-multi-column/full-width-three-column`
+	Update this file using `@ngm-dev/cli update multi-column/full-width-with-narrow-sidebar-header`
 */
 
 import { Component, Input, inject } from '@angular/core';
@@ -12,7 +12,11 @@ import { MatListModule } from '@angular/material/list';
 import { MatIconModule } from '@angular/material/icon';
 import { DeviceService } from '../../utils/services/device.service';
 import { classNames } from '../../utils/functions';
-
+import { MatRippleModule } from '@angular/material/core';
+import { FullWidthWithNarrowSidebarHeaderNavigationRailComponent } from './navigation-rail.component';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
+import { MatTooltipModule } from '@angular/material/tooltip';
 type User = {
   name: string;
   email: string;
@@ -20,13 +24,16 @@ type User = {
 };
 
 @Component({
-  selector: 'ngm-dev-block-content-placeholder-full-width-three-column',
+  selector:
+    'ngm-dev-block-content-placeholder-full-width-with-narrow-sidebar-header',
   template: `
     <div
-      class="relative h-full overflow-hidden rounded-xl border border-dashed border-gray-400 bg-surface">
+      class="relative h-full overflow-hidden rounded-xl border border-dashed border-gray-400 bg-surface"
+    >
       <svg
         class="absolute inset-0 h-full w-full stroke-gray-200 dark:stroke-gray-700"
-        fill="none">
+        fill="none"
+      >
         <defs>
           <pattern
             [id]="patternId"
@@ -34,7 +41,8 @@ type User = {
             y="0"
             width="10"
             height="10"
-            patternUnits="userSpaceOnUse">
+            patternUnits="userSpaceOnUse"
+          >
             <path d="M-3 13 15-5M-5 5l18-18M-1 21 17 3"></path>
           </pattern>
         </defs>
@@ -42,7 +50,8 @@ type User = {
           stroke="none"
           [attr.fill]="'url(#' + patternId + ')'"
           width="100%"
-          height="100%"></rect>
+          height="100%"
+        ></rect>
       </svg>
     </div>
   `,
@@ -55,14 +64,14 @@ type User = {
     `,
   ],
 })
-export class ContentPlaceholderFullWidthThreeColumnComponent {
-  @Input() patternId = 'full-width-three-column-pattern-1';
+export class ContentPlaceholderFullWidthWithNarrowSidebarHeaderComponent {
+  @Input() patternId = 'full-width-with-narrow-sidebar-header-pattern-1';
 }
 
 @Component({
-  selector: 'ngm-dev-block-full-width-three-column',
-  templateUrl: './full-width-three-column.component.html',
-  styleUrls: ['./full-width-three-column.component.scss'],
+  selector: 'ngm-dev-block-full-width-with-narrow-sidebar-header',
+  templateUrl: './full-width-with-narrow-sidebar-header.component.html',
+  styleUrls: ['./full-width-with-narrow-sidebar-header.component.scss'],
   imports: [
     MatToolbarModule,
     MatButtonModule,
@@ -70,10 +79,15 @@ export class ContentPlaceholderFullWidthThreeColumnComponent {
     MatListModule,
     MatIconModule,
     AsyncPipe,
-    ContentPlaceholderFullWidthThreeColumnComponent,
+    ContentPlaceholderFullWidthWithNarrowSidebarHeaderComponent,
+    MatRippleModule,
+    FullWidthWithNarrowSidebarHeaderNavigationRailComponent,
+    MatFormFieldModule,
+    MatInputModule,
+    MatTooltipModule,
   ],
 })
-export class FullWidthThreeColumnComponent {
+export class FullWidthWithNarrowSidebarHeaderComponent {
   readonly classNames = classNames;
   user: User = {
     name: 'John Doe',
@@ -118,20 +132,6 @@ export class FullWidthThreeColumnComponent {
       label: 'Reports',
       id: 'reports',
       icon: 'bar_chart',
-    },
-  ];
-  readonly teamMenu = [
-    {
-      label: 'Alpha',
-      id: 'alpha',
-    },
-    {
-      label: 'Beta',
-      id: 'beta',
-    },
-    {
-      label: 'Gamma',
-      id: 'gamma',
     },
   ];
 }
