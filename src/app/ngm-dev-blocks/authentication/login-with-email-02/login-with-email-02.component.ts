@@ -38,7 +38,7 @@ const APPLE_ICON = `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="2
     MatIconModule,
   ],
 })
-export class LoginWithEmail02Component {
+export default class LoginWithEmail02Component {
   form = new FormGroup({
     email: new FormControl('', [Validators.required, Validators.email]),
   });
@@ -49,15 +49,15 @@ export class LoginWithEmail02Component {
   constructor() {
     this.matIconRegistry.addSvgIconLiteral(
       'google',
-      this.sanitizer.bypassSecurityTrustHtml(GOOGLE_ICON),
+      this.sanitizer.bypassSecurityTrustHtml(GOOGLE_ICON)
     );
     this.matIconRegistry.addSvgIconLiteral(
       'github',
-      this.sanitizer.bypassSecurityTrustHtml(GITHUB_ICON),
+      this.sanitizer.bypassSecurityTrustHtml(GITHUB_ICON)
     );
     this.matIconRegistry.addSvgIconLiteral(
       'apple',
-      this.sanitizer.bypassSecurityTrustHtml(APPLE_ICON),
+      this.sanitizer.bypassSecurityTrustHtml(APPLE_ICON)
     );
   }
 

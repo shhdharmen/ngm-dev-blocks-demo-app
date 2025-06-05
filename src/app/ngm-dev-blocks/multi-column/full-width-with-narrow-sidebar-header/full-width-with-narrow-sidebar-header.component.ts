@@ -17,7 +17,7 @@ import { FullWidthWithNarrowSidebarHeaderNavigationRailComponent } from './navig
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatTooltipModule } from '@angular/material/tooltip';
-import { RouterOutlet } from '@angular/router';
+import { RouterLink, RouterOutlet } from '@angular/router';
 type User = {
   name: string;
   email: string;
@@ -41,6 +41,7 @@ type User = {
     MatFormFieldModule,
     MatInputModule,
     MatTooltipModule,
+    RouterLink,
   ],
 })
 export class FullWidthWithNarrowSidebarHeaderComponent {
