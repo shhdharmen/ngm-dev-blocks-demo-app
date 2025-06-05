@@ -16,6 +16,7 @@
   <div class="segment">
     @for (menuItem of menuItems(); track menuItem.id) {
     <a
+      [routerLink]="menuItem.routerLink"
       (click)="makeActive(menuItem.id)"
       [class]="classNames('nav-item', menuItem.isActive ? 'active' : '')"
     >

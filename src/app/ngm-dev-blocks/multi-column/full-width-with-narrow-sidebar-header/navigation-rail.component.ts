@@ -6,17 +6,24 @@
 import { Component, model } from '@angular/core';
 import { classNames } from '../../utils/functions';
 import { MatIconModule } from '@angular/material/icon';
+import { RouterLink } from '@angular/router';
 @Component({
   selector:
     'ngm-dev-block-paid-application-multi-column-full-width-with-narrow-sidebar-header-navigation-rail',
   templateUrl: './navigation-rail.component.html',
   styleUrls: ['./navigation-rail.component.scss'],
-  imports: [MatIconModule],
+  imports: [MatIconModule, RouterLink],
 })
 export class FullWidthWithNarrowSidebarHeaderNavigationRailComponent {
   menuItems =
     model.required<
-      { id: string; label: string; icon: string; isActive?: boolean }[]
+      {
+        id: string;
+        label: string;
+        icon: string;
+        routerLink: string;
+        isActive?: boolean;
+      }[]
     >();
 
   readonly classNames = classNames;
@@ -26,7 +33,7 @@ export class FullWidthWithNarrowSidebarHeaderNavigationRailComponent {
       items.map((item) => ({
         ...item,
         isActive: item.id === id,
-      })),
+      }))
     );
   }
 }

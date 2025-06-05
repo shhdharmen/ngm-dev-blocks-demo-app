@@ -40,7 +40,11 @@
       </mat-toolbar>
       <mat-nav-list>
         @for (menuItem of mainMenu; track menuItem.id) {
-        <a mat-list-item [activated]="menuItem.isActive ?? false">
+        <a
+          mat-list-item
+          [routerLink]="menuItem.routerLink"
+          [activated]="menuItem.isActive ?? false"
+        >
           <mat-icon
             matListItemIcon
             [class]="

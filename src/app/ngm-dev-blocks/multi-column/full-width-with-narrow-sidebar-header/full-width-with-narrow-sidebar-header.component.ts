@@ -57,38 +57,45 @@ export class FullWidthWithNarrowSidebarHeaderComponent {
     label: string;
     id: string;
     icon: string;
+    routerLink: string;
     isActive?: boolean;
   }[] = [
     {
       label: 'Dashboard',
       id: 'dashboard',
       icon: 'home',
+      routerLink: '/',
       isActive: true,
     },
     {
       label: 'Team',
       id: 'team',
       icon: 'people',
+      routerLink: '/team',
     },
     {
       label: 'Projects',
       id: 'projects',
       icon: 'folder',
+      routerLink: '/projects',
     },
     {
       label: 'Calendar',
       id: 'calendar',
       icon: 'event',
+      routerLink: '/calendar',
     },
     {
       label: 'Documents',
       id: 'documents',
       icon: 'article',
+      routerLink: '/documents',
     },
     {
       label: 'Reports',
       id: 'reports',
       icon: 'bar_chart',
+      routerLink: '/reports',
     },
   ];
 }
