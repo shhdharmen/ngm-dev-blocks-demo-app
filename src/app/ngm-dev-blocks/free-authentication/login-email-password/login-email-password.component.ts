@@ -3,7 +3,7 @@
 	Update this file using `@ngm-dev/cli update free-authentication/login-email-password`
 */
 
-import { NgOptimizedImage } from '@angular/common';
+import { NgOptimizedImage, NgClass } from '@angular/common';
 import { Component, inject, signal } from '@angular/core';
 import {
   MatCard,
@@ -31,16 +31,19 @@ import { Auth, signInWithEmailAndPassword } from '@angular/fire/auth';
     ReactiveFormsModule,
     MatIconModule,
     NgOptimizedImage,
-    FormsModule,
+    NgClass,
   ],
 })
 export default class LoginEmailPasswordComponent {
   auth = inject(Auth);
 
-  credentials = {
-    email: '',
-    password: '',
-  };
+  loginForm = new FormGroup({
+    email: new FormControl('', [Validators.required, Validators.email]),
+    password: new FormControl('', [
+      Validators.required,
+      Validators.minLength(6),
+    ]),
+  });
 
   showAlert = signal(false);
   alertMsg = signal('Please wait! We are logging you in.');
@@ -48,16 +51,22 @@ export default class LoginEmailPasswordComponent {
   inSubmission = signal(false);
 
   async login() {
+    if (this.loginForm.invalid) {
+      return;
+    }
+
     this.showAlert.set(true);
     this.alertMsg.set('Please wait! We are logging you in.');
     this.alertColor.set('blue');
     this.inSubmission.set(true);
 
     try {
+      const { email, password } = this.loginForm.value;
+
       await signInWithEmailAndPassword(
         this.auth,
-        this.credentials.email,
-        this.credentials.password
+        email as string,
+        password as string
       );
     } catch (e) {
       this.inSubmission.set(false);
@@ -71,5 +80,13 @@ export default class LoginEmailPasswordComponent {
 
     this.alertMsg.set('Success! You are now logged in.');
     this.alertColor.set('green');
+  }
+
+  get email() {
+    return this.loginForm.get('email');
+  }
+
+  get password() {
+    return this.loginForm.get('password');
   }
 }

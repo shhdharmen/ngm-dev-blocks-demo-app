@@ -18,6 +18,7 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatTooltipModule } from '@angular/material/tooltip';
 import { RouterLink, RouterOutlet } from '@angular/router';
+import { AuthService } from '../../../services/auth.service';
 type User = {
   name: string;
   email: string;
@@ -46,6 +47,8 @@ type User = {
 })
 export class FullWidthWithNarrowSidebarHeaderComponent {
   readonly classNames = classNames;
+  readonly authService = inject(AuthService);
+
   user: User = {
     name: 'John Doe',
     email: 'john@example.com',

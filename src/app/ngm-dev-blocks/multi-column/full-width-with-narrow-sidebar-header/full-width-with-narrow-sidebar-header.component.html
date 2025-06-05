@@ -92,7 +92,13 @@
       <button mat-icon-button>
         <mat-icon>notifications</mat-icon>
       </button>
-      <button mat-icon-button class="custom-avatar-button">
+      <button
+        mat-icon-button
+        class="custom-avatar-button"
+        [matTooltip]="
+          (authService.authState$ | async)?.displayName || user.name
+        "
+      >
         <img
           [src]="user.imageUrl"
           alt="User"
@@ -124,7 +130,7 @@
           alt="User"
           class="object-cover rounded-full size-6 me-1 inline-block"
         />
-        {{ user.name }}
+        {{ (authService.authState$ | async)?.displayName || user.name }}
       </button>
     </mat-toolbar>
     }
