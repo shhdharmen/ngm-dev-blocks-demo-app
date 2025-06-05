@@ -17,56 +17,12 @@ import { FullWidthWithNarrowSidebarHeaderNavigationRailComponent } from './navig
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatTooltipModule } from '@angular/material/tooltip';
+import { RouterOutlet } from '@angular/router';
 type User = {
   name: string;
   email: string;
   imageUrl: string;
 };
-
-@Component({
-  selector:
-    'ngm-dev-block-content-placeholder-full-width-with-narrow-sidebar-header',
-  template: `
-    <div
-      class="relative h-full overflow-hidden rounded-xl border border-dashed border-gray-400 bg-surface"
-    >
-      <svg
-        class="absolute inset-0 h-full w-full stroke-gray-200 dark:stroke-gray-700"
-        fill="none"
-      >
-        <defs>
-          <pattern
-            [id]="patternId"
-            x="0"
-            y="0"
-            width="10"
-            height="10"
-            patternUnits="userSpaceOnUse"
-          >
-            <path d="M-3 13 15-5M-5 5l18-18M-1 21 17 3"></path>
-          </pattern>
-        </defs>
-        <rect
-          stroke="none"
-          [attr.fill]="'url(#' + patternId + ')'"
-          width="100%"
-          height="100%"
-        ></rect>
-      </svg>
-    </div>
-  `,
-  styles: [
-    `
-      :host {
-        display: block;
-        height: 100%;
-      }
-    `,
-  ],
-})
-export class ContentPlaceholderFullWidthWithNarrowSidebarHeaderComponent {
-  @Input() patternId = 'full-width-with-narrow-sidebar-header-pattern-1';
-}
 
 @Component({
   selector: 'ngm-dev-block-full-width-with-narrow-sidebar-header',
@@ -79,7 +35,7 @@ export class ContentPlaceholderFullWidthWithNarrowSidebarHeaderComponent {
     MatListModule,
     MatIconModule,
     AsyncPipe,
-    ContentPlaceholderFullWidthWithNarrowSidebarHeaderComponent,
+    RouterOutlet,
     MatRippleModule,
     FullWidthWithNarrowSidebarHeaderNavigationRailComponent,
     MatFormFieldModule,

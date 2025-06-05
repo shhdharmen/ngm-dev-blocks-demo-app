@@ -44,12 +44,12 @@
           <mat-icon
             matListItemIcon
             [class]="
-                  classNames(
-                    menuItem.isActive
-                      ? 'icon-filled text-primary!'
-                      : 'text-gray-400! dark:text-gray-500!'
-                  )
-                "
+              classNames(
+                menuItem.isActive
+                  ? 'icon-filled text-primary!'
+                  : 'text-gray-400! dark:text-gray-500!'
+              )
+            "
             >{{ menuItem.icon }}</mat-icon
           >
           {{ menuItem.label }}
@@ -58,9 +58,7 @@
       </mat-nav-list>
       } @else {
       <ngm-dev-block-paid-application-multi-column-full-width-with-narrow-sidebar-header-navigation-rail
-        [menuItems]="
-            mainMenu
-          "
+        [menuItems]="mainMenu"
       ></ngm-dev-block-paid-application-multi-column-full-width-with-narrow-sidebar-header-navigation-rail>
       }
     </div>
@@ -128,19 +126,6 @@
     }
 
     <!-- Add Content Here -->
-    <aside
-      class="w-96 hidden lg:block absolute top-16 left-0 h-[calc(100dvh-64px)] border-r border-outline-variant"
-    >
-      <div class="p-4 md:p-6 h-full">
-        <ngm-dev-block-content-placeholder-full-width-with-narrow-sidebar-header></ngm-dev-block-content-placeholder-full-width-with-narrow-sidebar-header>
-      </div>
-    </aside>
-    <main class="lg:pl-96 h-[calc(100dvh-64px)] relative">
-      <div class="absolute top-0 left-0 right-0 lg:left-96 lg:right-0 h-full">
-        <div class="p-4 md:p-6 h-full">
-          <ngm-dev-block-content-placeholder-full-width-with-narrow-sidebar-header></ngm-dev-block-content-placeholder-full-width-with-narrow-sidebar-header>
-        </div>
-      </div>
-    </main>
+    <router-outlet></router-outlet>
   </mat-sidenav-content>
 </mat-sidenav-container>

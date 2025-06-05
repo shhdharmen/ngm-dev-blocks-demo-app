@@ -1,0 +1,59 @@
+<!--
+	Installed from https://ui.angular-material.dev/api/registry/
+	Update this file using `@ngm-dev/cli update authentication/login-with-email-02`
+-->
+
+<form [formGroup]="form" (ngSubmit)="onSubmit()" class="p-4 max-w-7xl mx-auto">
+  <mat-card appearance="outlined">
+    <mat-card-content>
+      <div class="max-w-md mx-auto space-y-8">
+        <div class="flex flex-col items-center space-y-4">
+          <img
+            src="https://ui.angular-material.dev/app-ui/logo.svg"
+            alt="Logo"
+            height="48"
+            width="48"
+            class="inline"
+          />
+          <h1 class="text-3xl text-center">Log in to App</h1>
+          <p class="text-center">Please sign in with your work email address</p>
+        </div>
+
+        <div class="flex flex-col space-y-3">
+          <button mat-stroked-button type="button">
+            <mat-icon svgIcon="google"></mat-icon>
+            Continue with Google
+          </button>
+          <button mat-stroked-button type="button">
+            <mat-icon svgIcon="apple"></mat-icon>
+            Continue with Apple
+          </button>
+          <button mat-stroked-button type="button">
+            <mat-icon svgIcon="github"></mat-icon>
+            Continue with GitHub
+          </button>
+        </div>
+
+        <div class="flex py-5 items-center" role="separator">
+          <div class="flex-grow h-px bg-outline-variant"></div>
+          <span class="flex-shrink mx-4">OR</span>
+          <div class="flex-grow h-px bg-outline-variant"></div>
+        </div>
+
+        <div class="space-y-4">
+          <button mat-flat-button type="button" class="w-full">
+            Continue with email
+          </button>
+          <p class="text-center text-sm">
+            We'll send you a verification code to your email address. Or you can
+            <a href="#">sign in manually</a>.
+          </p>
+        </div>
+      </div>
+    </mat-card-content>
+    <mat-card-actions class="density-3 justify-center">
+      <span class="text-sm">Having issues?</span>
+      <a mat-button>Contact us</a>
+    </mat-card-actions>
+  </mat-card>
+</form>
