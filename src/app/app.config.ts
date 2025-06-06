@@ -14,6 +14,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
 import { provideHttpClient, withFetch } from '@angular/common/http';
 import { routes } from './app.routes';
+import { environmentVariables } from '../../env';
 
 export const appConfig: ApplicationConfig = {
   providers: [
@@ -27,17 +28,7 @@ export const appConfig: ApplicationConfig = {
     provideRouter([]),
     provideHttpClient(withFetch()),
     provideRouter(routes),
-    provideFirebaseApp(() =>
-      initializeApp({
-        projectId: 'scheduler-app-a1fa3',
-        appId: '1:810517199160:web:9485292e310f983dc329cd',
-        storageBucket: 'scheduler-app-a1fa3.firebasestorage.app',
-        apiKey: 'AIzaSyCe7JA6YQxdCg1fHatENQUWI7JPrrYlBX8',
-        authDomain: 'scheduler-app-a1fa3.firebaseapp.com',
-        messagingSenderId: '810517199160',
-        measurementId: 'G-ZKJSWGF14R',
-      })
-    ),
+    provideFirebaseApp(() => initializeApp(environmentVariables)),
     provideFirestore(() => getFirestore()),
     provideAnimationsAsync(),
     provideAuth(() => getAuth()),
