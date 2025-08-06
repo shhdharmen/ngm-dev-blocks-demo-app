@@ -86,7 +86,7 @@
   --radius-corner-medium: var(--mat-sys-corner-medium);
   --radius-corner-small: var(--mat-sys-corner-small);
   --radius-mat-card: var(
-    --mdc-outlined-card-container-shape,
+    --mat-card-outlined-container-shape,
     var(--mat-sys-corner-medium)
   );
 
