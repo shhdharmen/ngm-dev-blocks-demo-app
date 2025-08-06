@@ -48,6 +48,7 @@ To change font-families, take a look at [_variables.scss](./src/_variables.scss)
   - [Nav With Page Header](https://ui.angular-material.dev/blocks/application/application-shells/stacked-layouts#nav-with-page-header)
   - [Full Width Three Column](https://ui.angular-material.dev/blocks/application/application-shells/multi-column#full-width-three-column)
   - [Page Heading With meta and actions](https://ui.angular-material.dev/blocks/application/headings/page-headings#page-heading-1)
+  - [Simple Stacked List](https://ui.angular-material.dev/blocks/application/lists/stacked-lists#stacked-list-simple)
 
 ## What's next?
 

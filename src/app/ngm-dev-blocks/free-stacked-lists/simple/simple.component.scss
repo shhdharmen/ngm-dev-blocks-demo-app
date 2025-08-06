@@ -1,0 +1,19 @@
+/*
+	Installed from https://ui.angular-material.dev/api/registry/
+	Update this file using `@ngm-dev/cli update free-stacked-lists/simple`
+*/
+
+@use '@angular/material' as mat;
+
+:host {
+  @include mat.list-overrides(
+    (
+      list-item-leading-icon-size: 36px,
+    )
+  );
+  @include mat.divider-overrides(
+    (
+      color: var(--mat-sys-outline-variant),
+    )
+  );
+}

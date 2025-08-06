@@ -1,0 +1,45 @@
+<!--
+	Installed from https://ui.angular-material.dev/api/registry/
+	Update this file using `@ngm-dev/cli update free-stacked-lists/simple`
+-->
+
+<div class="max-w-3xl mx-auto">
+  <mat-list>
+    @for (contact of contacts; track contact.id; let last = $last) {
+      <mat-list-item>
+        <img [src]="contact.imageUrl" matListItemAvatar class="rounded-full" />
+        <span matListItemTitle>
+          {{ contact.name }}
+        </span>
+        <span matListItemLine>
+          {{ contact.email }}
+        </span>
+        <div matListItemMeta>
+          <div class="hidden sm:flex items-center gap-x-2">
+            <p class="text-sm">
+              {{ contact.role }}
+            </p>
+            @if (contact.lastSeen === 'Online') {
+              <div class="mt-1 flex items-center gap-x-1.5">
+                <div class="flex-none rounded-full bg-emerald-500/20 p-1">
+                  <div class="size-1.5 rounded-full bg-emerald-500"></div>
+                </div>
+                <p class="text-xs leading-5 text-gray-500 dark:text-gray-400">
+                  Online
+                </p>
+              </div>
+            } @else {
+              <p
+                class="mt-1 text-xs leading-5 text-gray-500 dark:text-gray-400">
+                <time>{{ contact.lastSeen }}</time>
+              </p>
+            }
+          </div>
+        </div>
+      </mat-list-item>
+      @if (!last) {
+        <mat-divider />
+      }
+    }
+  </mat-list>
+</div>
