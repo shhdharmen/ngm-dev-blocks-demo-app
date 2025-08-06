@@ -31,12 +31,15 @@
       @if ((isHandset$ | async) === false) {
         @for (button of actionButtons; track button.label) {
           @if (button.variant === 'outlined') {
-            <button type="button" mat-stroked-button (click)="button.action()">
+            <button
+              type="button"
+              matButton="outlined"
+              (click)="button.action()">
               <mat-icon>{{ button.icon }}</mat-icon>
               {{ button.label }}
             </button>
           } @else {
-            <button type="button" mat-flat-button (click)="button.action()">
+            <button type="button" matButton="filled" (click)="button.action()">
               <mat-icon>{{ button.icon }}</mat-icon>
               {{ button.label }}
             </button>
@@ -44,7 +47,7 @@
         }
       } @else {
         <!-- Mobile: Show only Publish button + Dropdown -->
-        <button type="button" mat-flat-button (click)="onPublish()">
+        <button type="button" matButton="filled" (click)="onPublish()">
           <mat-icon>check</mat-icon>
           Publish
         </button>
@@ -52,7 +55,7 @@
         <!-- Mobile Dropdown Menu -->
         <button
           type="button"
-          mat-stroked-button
+          matButton="outlined"
           [matMenuTriggerFor]="mobileMenu">
           More
           <mat-icon>expand_more</mat-icon>

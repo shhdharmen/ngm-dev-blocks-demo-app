@@ -1,5 +1,12 @@
 # Sample Angular Workspace Configured for "Angular Material Blocks"
 
+## Versions
+
+| Version | Branch |
+| - | - |
+| 20 | [main](https://github.com/shhdharmen/ngm-dev-blocks-demo-app/tree/main) |
+| 19 | [v19](https://github.com/shhdharmen/ngm-dev-blocks-demo-app/tree/v19) |
+
 ## Getting started
 
 ### 1. Clone the repo
@@ -48,6 +55,7 @@ To change font-families, take a look at [_variables.scss](./src/_variables.scss)
   - [Nav With Page Header](https://ui.angular-material.dev/blocks/application/application-shells/stacked-layouts#nav-with-page-header)
   - [Full Width Three Column](https://ui.angular-material.dev/blocks/application/application-shells/multi-column#full-width-three-column)
   - [Page Heading With meta and actions](https://ui.angular-material.dev/blocks/application/headings/page-headings#page-heading-1)
+  - [Simple Stacked List](https://ui.angular-material.dev/blocks/application/lists/stacked-lists#stacked-list-simple)
 
 ## What's next?
 

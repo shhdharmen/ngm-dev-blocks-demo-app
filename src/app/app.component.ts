@@ -9,6 +9,7 @@ import { PageShell1Component } from './ngm-dev-blocks/free-page-shells/page-shel
 import { NavWithPageHeaderComponent } from './ngm-dev-blocks/free-stacked-layouts/nav-with-page-header/nav-with-page-header.component';
 import { PageHeading1Component } from "./ngm-dev-blocks/free-page-headings/page-heading-1/page-heading-1.component";
 import { FullWidthThreeColumnComponent } from "./ngm-dev-blocks/free-multi-column/full-width-three-column/full-width-three-column.component";
+import { SimpleStackedListComponent } from './ngm-dev-blocks/free-stacked-lists/simple';
 
 @Component({
   selector: 'app-root',
@@ -22,7 +23,8 @@ import { FullWidthThreeColumnComponent } from "./ngm-dev-blocks/free-multi-colum
     PageShell1Component,
     NavWithPageHeaderComponent,
     PageHeading1Component,
-    FullWidthThreeColumnComponent
+    FullWidthThreeColumnComponent,
+    SimpleStackedListComponent
 ],
   templateUrl: './app.component.html',
 })

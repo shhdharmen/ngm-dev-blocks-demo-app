@@ -3,8 +3,8 @@
 	Update this file using `@ngm-dev/cli update free-page-shells/page-shell-1`
 */
 
-import { Component, Input, signal } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import { Component, signal, input } from '@angular/core';
+
 import { MatTabsModule } from '@angular/material/tabs';
 import { MatCardModule } from '@angular/material/card';
 import { MatSelectModule } from '@angular/material/select';
@@ -21,7 +21,7 @@ import { MatFormFieldModule } from '@angular/material/form-field';
         fill="none">
         <defs>
           <pattern
-            [id]="patternId"
+            [id]="patternId()"
             x="0"
             y="0"
             width="10"
@@ -32,7 +32,7 @@ import { MatFormFieldModule } from '@angular/material/form-field';
         </defs>
         <rect
           stroke="none"
-          [attr.fill]="'url(#' + patternId + ')'"
+          [attr.fill]="'url(#' + patternId() + ')'"
           width="100%"
           height="100%"></rect>
       </svg>
@@ -48,7 +48,7 @@ import { MatFormFieldModule } from '@angular/material/form-field';
   ],
 })
 export class ContentPlaceholderComponent {
-  @Input() patternId = 'pattern-1';
+  readonly patternId = input('pattern-1');
 }
 
 type TimeRange = {
@@ -65,7 +65,6 @@ type Location = {
   selector: 'ngm-dev-block-page-shell-1',
   templateUrl: './page-shell-1.component.html',
   imports: [
-    CommonModule,
     MatTabsModule,
     MatCardModule,
     MatSelectModule,

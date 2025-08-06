@@ -7,15 +7,13 @@
   <ol class="flex items-center list-none p-0 m-0 flex-wrap">
     @for (item of items(); track item; let last = $last; let first = $first) {
       <li>
-        <ng-template [ngTemplateOutlet]="item.templateRef"></ng-template>
+        <ng-template [ngTemplateOutlet]="item.templateRef" />
       </li>
       @if (!last) {
         <li aria-hidden="true">
           @if (separatorTemplateRef()) {
             <ng-template
-              [ngTemplateOutlet]="
-                separatorTemplateRef()!.templateRef
-              "></ng-template>
+              [ngTemplateOutlet]="separatorTemplateRef()!.templateRef" />
           } @else {
             <mat-icon class="align-middle">chevron_right</mat-icon>
           }

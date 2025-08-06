@@ -8,6 +8,7 @@
 @forward './themes/dark'; // get it using `@ngm-dev/cli add styles/theme`
 @forward './themes/warn'; // get it using `@ngm-dev/cli add styles/theme`
 @forward './base'; // get it using `@ngm-dev/cli add styles/_base`
+@forward './buttons'; // get it using `@ngm-dev/cli add styles/_buttons`
 @forward './dialogs'; // get it using `@ngm-dev/cli add styles/_dialogs`
 @forward './sizes'; // get it using `@ngm-dev/cli add styles/_sizes`
 @forward './tabs'; // get it using `@ngm-dev/cli add styles/_tabs`

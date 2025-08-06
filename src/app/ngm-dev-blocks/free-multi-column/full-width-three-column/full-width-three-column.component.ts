@@ -3,7 +3,7 @@
 	Update this file using `@ngm-dev/cli update free-multi-column/full-width-three-column`
 */
 
-import { Component, Input, inject } from '@angular/core';
+import { Component, inject, input } from '@angular/core';
 import { AsyncPipe } from '@angular/common';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatButtonModule } from '@angular/material/button';
@@ -29,7 +29,7 @@ type User = {
         fill="none">
         <defs>
           <pattern
-            [id]="patternId"
+            [id]="patternId()"
             x="0"
             y="0"
             width="10"
@@ -40,7 +40,7 @@ type User = {
         </defs>
         <rect
           stroke="none"
-          [attr.fill]="'url(#' + patternId + ')'"
+          [attr.fill]="'url(#' + patternId() + ')'"
           width="100%"
           height="100%"></rect>
       </svg>
@@ -56,7 +56,7 @@ type User = {
   ],
 })
 export class ContentPlaceholderFullWidthThreeColumnComponent {
-  @Input() patternId = 'full-width-three-column-pattern-1';
+  readonly patternId = input('full-width-three-column-pattern-1');
 }
 
 @Component({

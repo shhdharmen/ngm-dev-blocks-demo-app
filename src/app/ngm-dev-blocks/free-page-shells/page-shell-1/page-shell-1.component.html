@@ -14,9 +14,9 @@
             (valueChange)="selectedTimeRange.set($event)"
             disableRipple>
             @for (timeRange of timeRanges; track timeRange.value) {
-            <mat-option [value]="timeRange.value">{{
-              timeRange.viewValue
-            }}</mat-option>
+              <mat-option [value]="timeRange.value">{{
+                timeRange.viewValue
+              }}</mat-option>
             }
           </mat-select>
         </mat-form-field>
@@ -26,9 +26,9 @@
             (valueChange)="selectedLocation.set($event)"
             disableRipple>
             @for (location of locations; track location.value) {
-            <mat-option [value]="location.value">{{
-              location.viewValue
-            }}</mat-option>
+              <mat-option [value]="location.value">{{
+                location.viewValue
+              }}</mat-option>
             }
           </mat-select>
         </mat-form-field>
@@ -42,22 +42,22 @@
           <mat-card appearance="outlined" class="h-36 p-2">
             <ngm-dev-block-content-placeholder
               patternId="pattern-1"
-              matCardImage></ngm-dev-block-content-placeholder>
+              matCardImage />
           </mat-card>
           <mat-card appearance="outlined" class="h-36 p-2">
             <ngm-dev-block-content-placeholder
               patternId="pattern-2"
-              matCardImage></ngm-dev-block-content-placeholder>
+              matCardImage />
           </mat-card>
           <mat-card appearance="outlined" class="h-36 p-2">
             <ngm-dev-block-content-placeholder
               patternId="pattern-3"
-              matCardImage></ngm-dev-block-content-placeholder>
+              matCardImage />
           </mat-card>
           <mat-card appearance="outlined" class="h-36 p-2">
             <ngm-dev-block-content-placeholder
               patternId="pattern-4"
-              matCardImage></ngm-dev-block-content-placeholder>
+              matCardImage />
           </mat-card>
         </div>
       </mat-tab>
@@ -66,7 +66,7 @@
           <mat-card appearance="outlined" class="h-72 p-2">
             <ngm-dev-block-content-placeholder
               patternId="pattern-5"
-              matCardImage></ngm-dev-block-content-placeholder>
+              matCardImage />
           </mat-card>
         </div>
       </mat-tab>
