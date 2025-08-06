@@ -1,5 +1,12 @@
 # Sample Angular Workspace Configured for "Angular Material Blocks"
 
+## Versions
+
+| Version | Branch |
+| - | - |
+| 20 | [main](https://github.com/shhdharmen/ngm-dev-blocks-demo-app/tree/main) |
+| 19 | [v19](https://github.com/shhdharmen/ngm-dev-blocks-demo-app/tree/v19) |
+
 ## Getting started
 
 ### 1. Clone the repo
