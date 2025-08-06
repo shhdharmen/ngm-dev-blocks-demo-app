@@ -5,60 +5,60 @@
 
 <mat-sidenav-container class="min-h-screen md:min-h-auto">
   @if (isHandset$ | async) {
-  <mat-sidenav #drawer mode="over">
-    <mat-toolbar class="border-b border-outline-variant">
-      <img
-        class="size-8"
-        src="https://ui.angular-material.dev/app-ui/logo.svg"
-        alt="Your Company" />
-      <button mat-icon-button (click)="toggleMenu()" class="ml-auto">
-        <mat-icon matListItemIcon>menu_opened</mat-icon>
-      </button>
-    </mat-toolbar>
-    <mat-list>
-      @for (item of navigation; track item) {
-      <a
-        mat-list-item
-        [href]="item.href"
-        [activated]="item.current"
-        [attr.aria-current]="item.current ? 'page' : undefined"
-        [class]="
-          item.current
-            ? 'bg-[color-mix(in_srgb,_var(--mat-sys-primary)_10%,_transparent)]!'
-            : ''
-        ">
-        {{ item.name }}
-      </a>
-      }
-      <mat-divider></mat-divider>
-      <div mat-subheader>
-        <div class="flex items-center">
-          <div class="flex-shrink-0">
-            <img
-              [src]="user.imageUrl"
-              alt=""
-              class="size-10 rounded-full object-cover" />
-          </div>
-          <div class="ml-3">
-            <div class="text-base font-medium">
-              {{ user.name }}
+    <mat-sidenav #drawer mode="over">
+      <mat-toolbar class="border-b border-outline-variant">
+        <img
+          class="size-8"
+          src="https://ui.angular-material.dev/app-ui/logo.svg"
+          alt="Your Company" />
+        <button mat-icon-button (click)="toggleMenu()" class="ml-auto">
+          <mat-icon matListItemIcon>menu_opened</mat-icon>
+        </button>
+      </mat-toolbar>
+      <mat-list>
+        @for (item of navigation; track item) {
+          <a
+            mat-list-item
+            [href]="item.href"
+            [activated]="item.current"
+            [attr.aria-current]="item.current ? 'page' : undefined"
+            [class]="
+              item.current
+                ? 'bg-[color-mix(in_srgb,_var(--mat-sys-primary)_10%,_transparent)]!'
+                : ''
+            ">
+            {{ item.name }}
+          </a>
+        }
+        <mat-divider />
+        <div mat-subheader>
+          <div class="flex items-center">
+            <div class="flex-shrink-0">
+              <img
+                [src]="user.imageUrl"
+                alt=""
+                class="size-10 rounded-full object-cover" />
             </div>
-            <div class="text-sm font-medium text-on-surface-variant">
-              {{ user.email }}
+            <div class="ml-3">
+              <div class="text-base font-medium">
+                {{ user.name }}
+              </div>
+              <div class="text-sm font-medium text-on-surface-variant">
+                {{ user.email }}
+              </div>
             </div>
+            <button mat-icon-button class="ml-auto">
+              <mat-icon>notifications</mat-icon>
+            </button>
           </div>
-          <button mat-icon-button class="ml-auto">
-            <mat-icon>notifications</mat-icon>
-          </button>
         </div>
-      </div>
-      @for (item of userNavigation; track item) {
-      <a mat-list-item routerLink="." [fragment]="item.href">
-        {{ item.name }}
-      </a>
-      }
-    </mat-list>
-  </mat-sidenav>
+        @for (item of userNavigation; track item) {
+          <a mat-list-item routerLink="." [fragment]="item.href">
+            {{ item.name }}
+          </a>
+        }
+      </mat-list>
+    </mat-sidenav>
   }
 
   <mat-sidenav-content class="bg-gray-100 dark:bg-gray-900">
@@ -70,52 +70,53 @@
           src="https://ui.angular-material.dev/app-ui/logo.svg"
           alt="Your Company" />
         @if ((isHandset$ | async) === false) {
-        <div class="ml-10">
-          <div class="flex items-baseline space-x-4">
-            @for (item of navigation; track item) {
-            <a
-              mat-button
-              routerLink="."
-              [fragment]="item.href"
-              [class]="
-                item.current
-                  ? 'bg-[color-mix(in_srgb,_var(--mat-sys-primary)_10%,_transparent)]!'
-                  : ''
-              "
-              [attr.aria-current]="item.current ? 'page' : undefined">
-              {{ item.name }}
-            </a>
-            }
+          <div class="ml-10">
+            <div class="flex items-baseline space-x-4">
+              @for (item of navigation; track item) {
+                <a
+                  matButton
+                  routerLink="."
+                  [fragment]="item.href"
+                  [class]="
+                    item.current
+                      ? 'bg-[color-mix(in_srgb,_var(--mat-sys-primary)_10%,_transparent)]!'
+                      : ''
+                  "
+                  [attr.aria-current]="item.current ? 'page' : undefined">
+                  {{ item.name }}
+                </a>
+              }
+            </div>
           </div>
-        </div>
-        <div class="flex items-center gap-2 ml-auto">
-          <button mat-icon-button aria-label="View notifications">
-            <mat-icon>notifications</mat-icon>
+          <div class="flex items-center gap-2 ml-auto">
+            <button mat-icon-button aria-label="View notifications">
+              <mat-icon>notifications</mat-icon>
+            </button>
+            <button
+              mat-icon-button
+              [matMenuTriggerFor]="userMenu"
+              aria-label="User menu"
+              class="p-1!">
+              <img
+                [src]="user.imageUrl"
+                alt=""
+                class="size-8! rounded-full object-cover" />
+            </button>
+          </div>
+        }
+        @if (isHandset$ | async) {
+          <button mat-icon-button (click)="toggleMenu()" class="ml-auto">
+            <mat-icon>menu</mat-icon>
           </button>
-          <button
-            mat-icon-button
-            [matMenuTriggerFor]="userMenu"
-            aria-label="User menu"
-            class="p-1!">
-            <img
-              [src]="user.imageUrl"
-              alt=""
-              class="size-8! rounded-full object-cover" />
-          </button>
-        </div>
-        } @if (isHandset$ | async) {
-        <button mat-icon-button (click)="toggleMenu()" class="ml-auto">
-          <mat-icon>menu</mat-icon>
-        </button>
         }
       </div>
     </mat-toolbar>
 
     <mat-menu #userMenu="matMenu">
       @for (item of userNavigation; track item) {
-      <a mat-menu-item routerLink="." [fragment]="item.href">
-        {{ item.name }}
-      </a>
+        <a mat-menu-item routerLink="." [fragment]="item.href">
+          {{ item.name }}
+        </a>
       }
     </mat-menu>
 
@@ -127,7 +128,7 @@
 
     <main>
       <div class="mx-auto max-w-7xl px-4 py-6 sm:px-6 lg:px-8">
-        <ngm-dev-block-content-placeholder-nav-with-page-header></ngm-dev-block-content-placeholder-nav-with-page-header>
+        <ngm-dev-block-content-placeholder-nav-with-page-header />
       </div>
     </main>
   </mat-sidenav-content>

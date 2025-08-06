@@ -41,6 +41,6 @@ export class TransferDialogComponent {
   }
 
   togglePasswordVisibility() {
-    this.hidePassword.update((hidePassword) => !hidePassword);
+    this.hidePassword.update(hidePassword => !hidePassword);
   }
 }

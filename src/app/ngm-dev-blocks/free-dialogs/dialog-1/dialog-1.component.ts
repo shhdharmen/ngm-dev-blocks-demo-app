@@ -22,7 +22,7 @@ export class Dialog1Component {
       width: '400px',
     });
 
-    dialogRef.afterClosed().subscribe((result) => {
+    dialogRef.afterClosed().subscribe(result => {
       if (result) {
         console.log('Dialog confirmed:', result);
       }

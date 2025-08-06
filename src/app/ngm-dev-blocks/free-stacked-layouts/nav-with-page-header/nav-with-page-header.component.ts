@@ -4,7 +4,7 @@
 */
 
 import { AsyncPipe } from '@angular/common';
-import { Component, inject, Input, ViewChild } from '@angular/core';
+import { Component, inject, input, viewChild } from '@angular/core';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 import { MatMenuModule } from '@angular/material/menu';
@@ -42,7 +42,7 @@ type User = {
         fill="none">
         <defs>
           <pattern
-            [id]="patternId"
+            [id]="patternId()"
             x="0"
             y="0"
             width="10"
@@ -53,7 +53,7 @@ type User = {
         </defs>
         <rect
           stroke="none"
-          [attr.fill]="'url(#' + patternId + ')'"
+          [attr.fill]="'url(#' + patternId() + ')'"
           width="100%"
           height="100%"></rect>
       </svg>
@@ -69,7 +69,7 @@ type User = {
   ],
 })
 export class ContentPlaceholderNavWithPageHeaderComponent {
-  @Input() patternId = 'nav-with-page-header-pattern-1';
+  readonly patternId = input('nav-with-page-header-pattern-1');
 }
 
 @Component({
@@ -89,7 +89,7 @@ export class ContentPlaceholderNavWithPageHeaderComponent {
   ],
 })
 export class NavWithPageHeaderComponent {
-  @ViewChild('drawer') drawer!: MatDrawer;
+  readonly drawer = viewChild.required<MatDrawer>('drawer');
 
   private deviceService = inject(DeviceService);
   isHandset$ = this.deviceService.isHandset$;
@@ -118,6 +118,6 @@ export class NavWithPageHeaderComponent {
   protected classNames = classNames;
 
   toggleMenu(): void {
-    this.drawer.toggle();
+    this.drawer().toggle();
   }
 }

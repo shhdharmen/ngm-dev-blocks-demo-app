@@ -74,8 +74,9 @@
 
   /* same as `plain-family` in angular material */
   --font-sans: var(--mat-sys-body-large-font), sans-serif;
-  --font-mono: 'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, Monaco,
-    Consolas, Liberation Mono, Courier New, monospace;
+  --font-mono:
+    'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas,
+    Liberation Mono, Courier New, monospace;
   --font-display: var(--mat-sys-display-large-font), sans-serif;
 
   /* angular material radiuses */
@@ -96,41 +97,41 @@
   --text-body-small--line-height: var(--mat-sys-body-small-line-height);
   --text-body-small--letter-spacing: var(--mat-sys-body-small-tracking);
   --text-body-small--font-weight: var(--mat-sys-body-small-weight);
-  --text-body-small--font-family: var(--mat-sys-body-small-font);
+  --font-body-small: var(--mat-sys-body-small-font);
   --text-body-medium: var(--mat-sys-body-medium-size);
   --text-body-medium--line-height: var(--mat-sys-body-medium-line-height);
   --text-body-medium--letter-spacing: var(--mat-sys-body-medium-tracking);
   --text-body-medium--font-weight: var(--mat-sys-body-medium-weight);
-  --text-body-medium--font-family: var(--mat-sys-body-medium-font);
+  --font-body-medium: var(--mat-sys-body-medium-font);
   --text-body-large: var(--mat-sys-body-large-size);
   --text-body-large--line-height: var(--mat-sys-body-large-line-height);
   --text-body-large--letter-spacing: var(--mat-sys-body-large-tracking);
   --text-body-large--font-weight: var(--mat-sys-body-large-weight);
-  --text-body-large--font-family: var(--mat-sys-body-large-font);
+  --font-body-large: var(--mat-sys-body-large-font);
 
   /* display */
   --text-display-small: var(--mat-sys-display-small-size);
   --text-display-small--line-height: var(--mat-sys-display-small-line-height);
   --text-display-small--letter-spacing: var(--mat-sys-display-small-tracking);
   --text-display-small--font-weight: var(--mat-sys-display-small-weight);
-  --text-display-small--font-family: var(--mat-sys-display-small-font);
+  --font-display-small: var(--mat-sys-display-small-font);
   --text-display-medium: var(--mat-sys-display-medium-size);
   --text-display-medium--line-height: var(--mat-sys-display-medium-line-height);
   --text-display-medium--letter-spacing: var(--mat-sys-display-medium-tracking);
   --text-display-medium--font-weight: var(--mat-sys-display-medium-weight);
-  --text-display-medium--font-family: var(--mat-sys-display-medium-font);
+  --font-display-medium: var(--mat-sys-display-medium-font);
   --text-display-large: var(--mat-sys-display-large-size);
   --text-display-large--line-height: var(--mat-sys-display-large-line-height);
   --text-display-large--letter-spacing: var(--mat-sys-display-large-tracking);
   --text-display-large--font-weight: var(--mat-sys-display-large-weight);
-  --text-display-large--font-family: var(--mat-sys-display-large-font);
+  --font-display-large: var(--mat-sys-display-large-font);
 
   /* headline */
   --text-headline-small: var(--mat-sys-headline-small-size);
   --text-headline-small--line-height: var(--mat-sys-headline-small-line-height);
   --text-headline-small--letter-spacing: var(--mat-sys-headline-small-tracking);
   --text-headline-small--font-weight: var(--mat-sys-headline-small-weight);
-  --text-headline-small--font-family: var(--mat-sys-headline-small-font);
+  --font-headline-small: var(--mat-sys-headline-small-font);
   --text-headline-medium: var(--mat-sys-headline-medium-size);
   --text-headline-medium--line-height: var(
     --mat-sys-headline-medium-line-height
@@ -139,46 +140,46 @@
     --mat-sys-headline-medium-tracking
   );
   --text-headline-medium--font-weight: var(--mat-sys-headline-medium-weight);
-  --text-headline-medium--font-family: var(--mat-sys-headline-medium-font);
+  --font-headline-medium: var(--mat-sys-headline-medium-font);
   --text-headline-large: var(--mat-sys-headline-large-size);
   --text-headline-large--line-height: var(--mat-sys-headline-large-line-height);
   --text-headline-large--letter-spacing: var(--mat-sys-headline-large-tracking);
   --text-headline-large--font-weight: var(--mat-sys-headline-large-weight);
-  --text-headline-large--font-family: var(--mat-sys-headline-large-font);
+  --font-headline-large: var(--mat-sys-headline-large-font);
 
   /* title */
   --text-title-small: var(--mat-sys-title-small-size);
   --text-title-small--line-height: var(--mat-sys-title-small-line-height);
   --text-title-small--letter-spacing: var(--mat-sys-title-small-tracking);
   --text-title-small--font-weight: var(--mat-sys-title-small-weight);
-  --text-title-small--font-family: var(--mat-sys-title-small-font);
+  --font-title-small: var(--mat-sys-title-small-font);
   --text-title-medium: var(--mat-sys-title-medium-size);
   --text-title-medium--line-height: var(--mat-sys-title-medium-line-height);
   --text-title-medium--letter-spacing: var(--mat-sys-title-medium-tracking);
   --text-title-medium--font-weight: var(--mat-sys-title-medium-weight);
-  --text-title-medium--font-family: var(--mat-sys-title-medium-font);
+  --font-title-medium: var(--mat-sys-title-medium-font);
   --text-title-large: var(--mat-sys-title-large-size);
   --text-title-large--line-height: var(--mat-sys-title-large-line-height);
   --text-title-large--letter-spacing: var(--mat-sys-title-large-tracking);
   --text-title-large--font-weight: var(--mat-sys-title-large-weight);
-  --text-title-large--font-family: var(--mat-sys-title-large-font);
+  --font-title-large: var(--mat-sys-title-large-font);
 
   /* label */
   --text-label-small: var(--mat-sys-label-small-size);
   --text-label-small--line-height: var(--mat-sys-label-small-line-height);
   --text-label-small--letter-spacing: var(--mat-sys-label-small-tracking);
   --text-label-small--font-weight: var(--mat-sys-label-small-weight);
-  --text-label-small--font-family: var(--mat-sys-label-small-font);
+  --font-label-small: var(--mat-sys-label-small-font);
   --text-label-medium: var(--mat-sys-label-medium-size);
   --text-label-medium--line-height: var(--mat-sys-label-medium-line-height);
   --text-label-medium--letter-spacing: var(--mat-sys-label-medium-tracking);
   --text-label-medium--font-weight: var(--mat-sys-label-medium-weight);
-  --text-label-medium--font-family: var(--mat-sys-label-medium-font);
+  --font-label-medium: var(--mat-sys-label-medium-font);
   --text-label-large: var(--mat-sys-label-large-size);
   --text-label-large--line-height: var(--mat-sys-label-large-line-height);
   --text-label-large--letter-spacing: var(--mat-sys-label-large-tracking);
   --text-label-large--font-weight: var(--mat-sys-label-large-weight);
-  --text-label-large--font-family: var(--mat-sys-label-large-font);
+  --font-label-large: var(--mat-sys-label-large-font);
 
   /* animations */
   /* fade-in */

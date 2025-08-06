@@ -3,6 +3,6 @@
 	Update this file using `@ngm-dev/cli update utils/functions`
 */
 
-export * from './class-names';
-export * from './shuffle-array';
-export * from './random';
+export const randomInt = (min: number, max: number) => {
+  return Math.floor(Math.random() * (max - min + 1)) + min;
+};
