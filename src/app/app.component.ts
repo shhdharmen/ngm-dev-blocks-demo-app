@@ -10,6 +10,7 @@ import { NavWithPageHeaderComponent } from './ngm-dev-blocks/free-stacked-layout
 import { PageHeading1Component } from "./ngm-dev-blocks/free-page-headings/page-heading-1/page-heading-1.component";
 import { FullWidthThreeColumnComponent } from "./ngm-dev-blocks/free-multi-column/full-width-three-column/full-width-three-column.component";
 import { SimpleStackedListComponent } from './ngm-dev-blocks/free-stacked-lists/simple';
+import { AreaChart1Component } from "./ngm-dev-blocks/free-area-charts/area-chart-1/area-chart-1.component";
 
 @Component({
   selector: 'app-root',
@@ -24,7 +25,8 @@ import { SimpleStackedListComponent } from './ngm-dev-blocks/free-stacked-lists/
     NavWithPageHeaderComponent,
     PageHeading1Component,
     FullWidthThreeColumnComponent,
-    SimpleStackedListComponent
+    SimpleStackedListComponent,
+    AreaChart1Component
 ],
   templateUrl: './app.component.html',
 })

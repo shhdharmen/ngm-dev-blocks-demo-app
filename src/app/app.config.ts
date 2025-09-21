@@ -1,6 +1,7 @@
 import { MAT_ICON_DEFAULT_OPTIONS } from "@angular/material/icon";
 import { ApplicationConfig, provideZoneChangeDetection } from '@angular/core';
 import { provideRouter } from "@angular/router";
+import { provideCharts, withDefaultRegisterables } from 'ng2-charts';
 
 export const appConfig: ApplicationConfig = {
   providers: [provideZoneChangeDetection({ eventCoalescing: true }), {
@@ -8,5 +9,5 @@ export const appConfig: ApplicationConfig = {
       useValue: {
         fontSet: 'material-symbols-outlined',
       },
-    }, provideRouter([])]
+    }, provideRouter([]), provideCharts(withDefaultRegisterables())]
 };

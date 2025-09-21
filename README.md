@@ -56,6 +56,7 @@ To change font-families, take a look at [_variables.scss](./src/_variables.scss)
   - [Full Width Three Column](https://ui.angular-material.dev/blocks/application/application-shells/multi-column#full-width-three-column)
   - [Page Heading With meta and actions](https://ui.angular-material.dev/blocks/application/headings/page-headings#page-heading-1)
   - [Simple Stacked List](https://ui.angular-material.dev/blocks/application/lists/stacked-lists#stacked-list-simple)
+  - [Area Chart 1](https://ui.angular-material.dev/blocks/application/charts/area-charts#area-chart-1)
 
 ## What's next?
 
