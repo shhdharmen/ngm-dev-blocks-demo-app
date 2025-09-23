@@ -1,0 +1,30 @@
+<!--
+	Installed from http://ui.angular-material.dev/api/registry/
+	Update this file using `@ngm-dev/cli update free-bar-charts/bar-chart-1`
+-->
+
+<div class="mx-auto max-w-3xl">
+  <mat-card appearance="outlined">
+    <mat-card-header>
+      <mat-card-title>{{ title }}</mat-card-title>
+      <mat-card-subtitle>{{ description }}</mat-card-subtitle>
+    </mat-card-header>
+    <mat-card-content>
+      <div class="mt-6 h-60">
+        <canvas
+          baseChart
+          [data]="chartDataLarge()"
+          [options]="chartOptionsLarge"
+          [type]="'bar'"
+        ></canvas>
+      </div>
+
+      <mat-divider class="my-4! border-outline-variant!" />
+      <div class="mb-1 flex items-center gap-2">
+        <mat-slide-toggle (change)="showComparison.set($event.checked)">
+          Show same period previous year
+        </mat-slide-toggle>
+      </div>
+    </mat-card-content>
+  </mat-card>
+</div>

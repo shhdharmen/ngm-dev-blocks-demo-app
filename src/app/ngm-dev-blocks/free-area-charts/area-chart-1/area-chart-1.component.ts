@@ -1,5 +1,5 @@
 /*
-	Installed from http://localhost:4000/api/registry/
+	Installed from http://ui.angular-material.dev/api/registry/
 	Update this file using `@ngm-dev/cli update free-area-charts/area-chart-1`
 */
 
@@ -128,7 +128,7 @@ export class AreaChart1Component {
   };
 
   get summary(): SummaryItem[] {
-    return this.chartData.datasets.map(dataset => ({
+    return this.chartData.datasets.map((dataset) => ({
       name: dataset.label ?? '',
       value: dataset.data.reduce((acc, curr) => acc + curr, 0),
       color: dataset.borderColor?.toString() ?? '',

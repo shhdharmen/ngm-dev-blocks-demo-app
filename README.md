@@ -2,10 +2,10 @@
 
 ## Versions
 
-| Version | Branch |
-| - | - |
-| 20 | [main](https://github.com/shhdharmen/ngm-dev-blocks-demo-app/tree/main) |
-| 19 | [v19](https://github.com/shhdharmen/ngm-dev-blocks-demo-app/tree/v19) |
+| Version | Branch                                                                  |
+| ------- | ----------------------------------------------------------------------- |
+| 20      | [main](https://github.com/shhdharmen/ngm-dev-blocks-demo-app/tree/main) |
+| 19      | [v19](https://github.com/shhdharmen/ngm-dev-blocks-demo-app/tree/v19)   |
 
 ## Getting started
 
@@ -34,7 +34,7 @@ To change colors, take a look at [tokens.scss](./src/tokens.scss) file. Or if yo
 
 ## Changing typography
 
-To change font-families, take a look at [_variables.scss](./src/_variables.scss) file. Or if you want to use `Roboto` font, simply make changes in [styles.scss](./src/styles.scss) and [index.html](./src/index.html).
+To change font-families, take a look at [\_variables.scss](./src/_variables.scss) file. Or if you want to use `Roboto` font, simply make changes in [styles.scss](./src/styles.scss) and [index.html](./src/index.html).
 
 ## What's included?
 
@@ -57,6 +57,7 @@ To change font-families, take a look at [_variables.scss](./src/_variables.scss)
   - [Page Heading With meta and actions](https://ui.angular-material.dev/blocks/application/headings/page-headings#page-heading-1)
   - [Simple Stacked List](https://ui.angular-material.dev/blocks/application/lists/stacked-lists#stacked-list-simple)
   - [Area Chart 1](https://ui.angular-material.dev/blocks/application/charts/area-charts#area-chart-1)
+  - [Bar Chart 1](https://ui.angular-material.dev/blocks/application/charts/bar-charts#bar-chart-1)
 
 ## What's next?
 

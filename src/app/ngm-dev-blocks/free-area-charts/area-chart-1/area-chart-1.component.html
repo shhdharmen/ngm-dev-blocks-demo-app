@@ -1,5 +1,5 @@
 <!--
-	Installed from http://localhost:4000/api/registry/
+	Installed from http://ui.angular-material.dev/api/registry/
 	Update this file using `@ngm-dev/cli update free-area-charts/area-chart-1`
 -->
 
@@ -15,7 +15,8 @@
           baseChart
           [data]="chartData"
           [options]="chartOptions"
-          [type]="chartType"></canvas>
+          [type]="chartType"
+        ></canvas>
       </div>
       <mat-list>
         @for (item of summary; track item.name; let last = $last) {
@@ -24,7 +25,8 @@
               class="h-1! w-3! rounded-sm"
               [style.background]="item.color"
               aria-hidden="true"
-              matListItemIcon></span>
+              matListItemIcon
+            ></span>
             <span class="flex items-center justify-between w-full">
               <span class="text-body-medium font-body-small">{{
                 item.name
