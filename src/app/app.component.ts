@@ -12,6 +12,7 @@ import { FullWidthThreeColumnComponent } from './ngm-dev-blocks/free-multi-colum
 import { SimpleStackedListComponent } from './ngm-dev-blocks/free-stacked-lists/simple';
 import { AreaChart1Component } from './ngm-dev-blocks/free-area-charts/area-chart-1/area-chart-1.component';
 import { BarChart1Component } from './ngm-dev-blocks/free-bar-charts/bar-chart-1/bar-chart-1.component';
+import { DonutChart1Component } from './ngm-dev-blocks/free-donut-charts/donut-chart-1/donut-chart-1.component';
 @Component({
   selector: 'app-root',
   imports: [
@@ -28,6 +29,7 @@ import { BarChart1Component } from './ngm-dev-blocks/free-bar-charts/bar-chart-1
     SimpleStackedListComponent,
     AreaChart1Component,
     BarChart1Component,
+    DonutChart1Component,
   ],
   templateUrl: './app.component.html',
 })

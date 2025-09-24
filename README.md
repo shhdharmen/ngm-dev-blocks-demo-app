@@ -58,6 +58,7 @@ To change font-families, take a look at [\_variables.scss](./src/_variables.scss
   - [Simple Stacked List](https://ui.angular-material.dev/blocks/application/lists/stacked-lists#stacked-list-simple)
   - [Area Chart 1](https://ui.angular-material.dev/blocks/application/charts/area-charts#area-chart-1)
   - [Bar Chart 1](https://ui.angular-material.dev/blocks/application/charts/bar-charts#bar-chart-1)
+  - [Donut Chart 1](https://ui.angular-material.dev/blocks/application/charts/donut-charts#donut-chart-1)
 
 ## What's next?
 

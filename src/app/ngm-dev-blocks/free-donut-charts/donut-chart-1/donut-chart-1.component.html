@@ -1,0 +1,59 @@
+<!--
+	Installed from https://ui.angular-material.dev/api/registry/
+	Update this file using `@ngm-dev/cli update free-donut-charts/donut-chart-1`
+-->
+
+<div class="mx-auto max-w-lg">
+  <mat-card appearance="outlined">
+    <mat-card-header>
+      <mat-card-title>Department Budget Allocation</mat-card-title>
+    </mat-card-header>
+
+    <mat-card-content>
+      <div class="mt-8 h-48 relative">
+        <canvas
+          baseChart
+          [data]="chartData"
+          [options]="chartOptions"
+          [type]="chartType"
+        ></canvas>
+      </div>
+
+      <div
+        class="mt-8 flex items-center justify-between text-label-medium text-on-surface-variant pr-4 pl-2"
+      >
+        <span>Department</span>
+        <span>Amount / Share</span>
+      </div>
+
+      <mat-list class="mt-2 density-2">
+        @for (item of data; track item.name; let last = $last) {
+          <mat-list-item>
+            <span
+              class="size-2.5! rounded-sm"
+              [style.background]="item.color"
+              aria-hidden="true"
+              matListItemIcon
+            ></span>
+            <div class="flex justify-between w-full">
+              {{ item.name }}
+              <span class="flex space-x-2">
+                <span class="font-medium tabular-nums">
+                  {{ item.amount | currency }}
+                </span>
+                <span
+                  class="text-xs p-1 rounded-sm bg-surface-container-highest text-on-surface-variant"
+                >
+                  {{ item.share }}
+                </span>
+              </span>
+            </div>
+          </mat-list-item>
+          @if (!last) {
+            <mat-divider class="border-outline-variant!" />
+          }
+        }
+      </mat-list>
+    </mat-card-content>
+  </mat-card>
+</div>
