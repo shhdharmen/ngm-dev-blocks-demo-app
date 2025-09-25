@@ -1,0 +1,41 @@
+<!--
+	Installed from https://ui.angular-material.dev/api/registry/
+	Update this file using `@ngm-dev/cli update free-line-charts/line-chart-1`
+-->
+
+<div class="mx-auto max-w-md">
+  <mat-card appearance="outlined">
+    <mat-card-header>
+      <mat-card-title> Website traffic by source </mat-card-title>
+    </mat-card-header>
+
+    <mat-card-content>
+      <div class="mt-6 h-32 relative">
+        <canvas
+          baseChart
+          [data]="chartData"
+          [options]="chartOptions"
+          [type]="chartType"
+        ></canvas>
+      </div>
+      <mat-list class="mt-2">
+        @for (item of summary; track item.name) {
+          <mat-list-item class="density-2">
+            <span
+              class="h-1! w-3! rounded-sm"
+              [style.background]="item.color"
+              aria-hidden="true"
+              matListItemIcon
+            ></span>
+            <span class="flex items-center justify-between w-full">
+              <span class="text-body-medium">{{ item.name }}</span>
+              <span class="text-body-medium font-medium text-right">{{
+                item.value | number
+              }}</span>
+            </span>
+          </mat-list-item>
+        }
+      </mat-list>
+    </mat-card-content>
+  </mat-card>
+</div>

@@ -13,6 +13,7 @@ import { SimpleStackedListComponent } from './ngm-dev-blocks/free-stacked-lists/
 import { AreaChart1Component } from './ngm-dev-blocks/free-area-charts/area-chart-1/area-chart-1.component';
 import { BarChart1Component } from './ngm-dev-blocks/free-bar-charts/bar-chart-1/bar-chart-1.component';
 import { DonutChart1Component } from './ngm-dev-blocks/free-donut-charts/donut-chart-1/donut-chart-1.component';
+import { LineChart1Component } from './ngm-dev-blocks/free-line-charts/line-chart-1/line-chart-1.component';
 @Component({
   selector: 'app-root',
   imports: [
@@ -30,6 +31,7 @@ import { DonutChart1Component } from './ngm-dev-blocks/free-donut-charts/donut-c
     AreaChart1Component,
     BarChart1Component,
     DonutChart1Component,
+    LineChart1Component,
   ],
   templateUrl: './app.component.html',
 })
